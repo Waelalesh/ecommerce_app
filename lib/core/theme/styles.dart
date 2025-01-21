@@ -15,14 +15,19 @@ class TextStyles {
     color: ColorsManager.lightPurple,
     fontWeight: FontWeightHelper.medium,
   );
-  static TextStyle font13WhiteMedium = TextStyle(
-    fontSize: 13.sp,
+  static TextStyle font15DoveGrayMedium = TextStyle(
+    fontSize: 15.sp,
+    color: ColorsManager.doveGray,
+    fontWeight: FontWeightHelper.medium,
+  );
+  static TextStyle font15WhiteMedium = TextStyle(
+    fontSize: 15.sp,
     color: Colors.white,
     fontWeight: FontWeightHelper.medium,
   );
-  static TextStyle font13semiTransparentDarkPurpleMedium = TextStyle(
+  static TextStyle font13SemiTransparentDarkPurpleSemiBold = TextStyle(
     fontSize: 13.sp,
     color: ColorsManager.semiTransparentDarkPurple,
-    fontWeight: FontWeightHelper.medium,
+    fontWeight: FontWeightHelper.semiBold,
   );
 }

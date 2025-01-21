@@ -14,7 +14,7 @@ class AppRouter {
               // BlocProvider(
               // create: (context) => getIt<LoginCubit>(),
               // child:
-              const LoginScreen(),
+                const LoginScreen(),
         );
       // );
 

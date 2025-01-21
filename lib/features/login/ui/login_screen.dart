@@ -23,7 +23,7 @@ class LoginScreen extends StatelessWidget {
                         text: "Login",
                         textStyle: TextStyles.font28eggplantPurpleBold),
                     verticalSpace(30),
-                    const TextForms(),
+                    const EmailAndPassword(),
                     verticalSpace(20),
                     AnimatedAppTextButton(
                         text: "Forgot Password?",
@@ -37,12 +37,13 @@ class LoginScreen extends StatelessWidget {
                         color: ColorsManager.eggplantPurple,
                         height: 48,
                         text: "Login",
-                        textStyle: TextStyles.font13WhiteMedium),
+                        textStyle: TextStyles.font15WhiteMedium),
                     verticalSpace(20),
                     AnimatedAppTextButton(
                         text: "Create Account",
                         textStyle:
-                            TextStyles.font13semiTransparentDarkPurpleMedium,
+                            // TextStyle(),
+                            TextStyles.font13SemiTransparentDarkPurpleSemiBold,
                         milliSecondsDuration: 2000,
                         onPressed: () {})
                   ],

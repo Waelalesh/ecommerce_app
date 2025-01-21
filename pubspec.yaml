@@ -76,6 +76,16 @@ dependencies:
   # Beautiful animations inspired on Animate.css
   # https://pub.dev/packages/animate_do/install
   animate_do: ^3.3.4
+  # Flutter Page Transition Package which is the transition second page
+  # https://pub.dev/packages/page_transition/install
+  page_transition: ^2.2.1
+  # A customised Flutter TextFormField to input international phone number
+  # https://pub.dev/packages/intl_phone_field/install
+  intl_phone_field: ^3.2.0
+  # Flutter phone input integrated with flutter internationalization
+  # https://pub.dev/packages/phone_form_field/install
+  phone_form_field: ^10.0.3
+
 
 
 

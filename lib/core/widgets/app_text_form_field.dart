@@ -1,30 +1,28 @@
-import 'package:ecommerce_app/core/helpers/constants.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:phone_form_field/phone_form_field.dart';
-
-import '../theme/colors.dart';
+import 'package:ecommerce_app/imports.dart';
 
 class AppTextFormField extends StatefulWidget {
   final TextEditingController controller;
   final String? Function(String?)? validator;
   final TextFormFieldType type;
-  final String hintText;
+  final String? hintText;
   final TextStyle hintStyle;
   final Color? backgroundColor;
 
   /// for check if last field to delete last border line
   final bool isLast;
-
+  final Widget? suffixIcon;
   const AppTextFormField({
     super.key,
     required this.controller,
     this.validator,
     required this.type,
-    required this.hintText,
+    this.hintText,
     required this.hintStyle,
     this.backgroundColor,
+
+    /// for check if last field to delete last border line
     required this.isLast,
+    this.suffixIcon,
   });
 
   @override
@@ -44,7 +42,8 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
                   Border(bottom: BorderSide(color: ColorsManager.paleMauve))),
       child: widget.type == TextFormFieldType.phoneNumber
           ? PhoneFormField(
-              decoration: const InputDecoration(
+              decoration:   InputDecoration(
+                suffixIcon: widget.suffixIcon,
                 border: InputBorder.none,
               ),
               initialValue: PhoneNumber.parse('+963'), // or use the controller
@@ -57,18 +56,14 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
               enabled: true,
               isCountrySelectionEnabled: true,
               isCountryButtonPersistent: true,
-              countryButtonStyle:   CountryButtonStyle(
+              countryButtonStyle: CountryButtonStyle(
+                  textStyle: widget.hintStyle,
                   padding: EdgeInsets.symmetric(vertical: 10.h),
                   showDialCode: true,
                   showIsoCode: true,
                   showFlag: false,
                   flagSize: 0),
-
-              // + all parameters of TextField
-              // + all parameters of FormField
-              // ...
             )
-          
           : TextFormField(
               obscureText: widget.type == TextFormFieldType.password
                   ? !obscureText
@@ -90,16 +85,12 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
                         crossFadeState: obscureText
                             ? CrossFadeState.showFirst
                             : CrossFadeState.showSecond,
-                        duration: const Duration(seconds: 1))
-                    : null,
+                        duration: const Duration(microseconds: 500))
+                    : widget.suffixIcon,
                 border: InputBorder.none,
                 hintText: widget.hintText,
                 hintStyle: widget.hintStyle,
-              )
-              // TextStyles.font13DoveGrayMedium),
-              ),
+              )),
     );
   }
 }
-
-

@@ -1,7 +1,7 @@
-import '../../../imports.dart';
+import 'package:ecommerce_app/imports.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,34 +20,33 @@ class LoginScreen extends StatelessWidget {
                   children: [
                     AnimatedAppText(
                         milliSecondsDuration: 1500,
-                        text: "Login",
+                        text: "Sign Up",
                         textStyle: TextStyles.font28eggplantPurpleBold),
                     verticalSpace(30),
                     const EmailAndPassword(),
                     verticalSpace(20),
-                    AnimatedAppTextButton(
-                        text: "Forgot Password?",
-                        textStyle: TextStyles.font13LightPurpleMedium,
-                        milliSecondsDuration: 1700,
-                        onPressed: () {}),
-                    verticalSpace(20),
+                    // AnimatedAppTextButton(
+                    //     text: "Forgot Password?",
+                    //     textStyle: TextStyles.font13LightPurpleMedium,
+                    //     milliSecondsDuration: 1700,
+                    //     onPressed: () {}),
+                    // verticalSpace(20),
                     AnimatedAppButton(
                         milliSecondsDuration: 1900,
                         onPressed: () {},
                         color: ColorsManager.eggplantPurple,
                         height: 48,
-                        text: "Login",
+                        text: "SignUp",
                         textStyle: TextStyles.font15WhiteMedium),
                     verticalSpace(20),
                     AnimatedAppTextButton(
-                        text: "Create Account",
+                        text: "Login",
                         textStyle:
-                            // TextStyle(),
                             TextStyles.font13SemiTransparentDarkPurpleSemiBold,
                         milliSecondsDuration: 2000,
                         onPressed: () {
-                          context.pushNamed(Routes.signUpScreen);
-                        })
+                          context.pop();
+                        }),
                   ],
                 ),
               )

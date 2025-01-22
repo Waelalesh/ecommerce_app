@@ -25,12 +25,6 @@ class SignupScreen extends StatelessWidget {
                     verticalSpace(30),
                     const EmailAndPassword(),
                     verticalSpace(20),
-                    // AnimatedAppTextButton(
-                    //     text: "Forgot Password?",
-                    //     textStyle: TextStyles.font13LightPurpleMedium,
-                    //     milliSecondsDuration: 1700,
-                    //     onPressed: () {}),
-                    // verticalSpace(20),
                     AnimatedAppButton(
                         milliSecondsDuration: 1900,
                         onPressed: () {},

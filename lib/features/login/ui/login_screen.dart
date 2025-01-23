@@ -29,7 +29,9 @@ class LoginScreen extends StatelessWidget {
                         text: "Forgot Password?",
                         textStyle: TextStyles.font13LightPurpleMedium,
                         milliSecondsDuration: 1700,
-                        onPressed: () {}),
+                        onPressed: () {
+                          context.pushNamed(Routes.checkEmailScreen , arguments: "login");
+                        }),
                     verticalSpace(20),
                     AnimatedAppButton(
                         milliSecondsDuration: 1900,

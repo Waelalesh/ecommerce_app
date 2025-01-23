@@ -3,8 +3,8 @@ import 'package:ecommerce_app/core/widgets/app_text_form_field.dart';
 import '../../../../core/helpers/app_regex.dart';
 import '../../../../imports.dart';
 
-class EmailAndPassword extends StatelessWidget {
-  const EmailAndPassword({super.key});
+class SignupUsernameEmailPhoneAndPassword extends StatelessWidget {
+  const SignupUsernameEmailPhoneAndPassword({super.key});
 
   @override
   Widget build(BuildContext context) {

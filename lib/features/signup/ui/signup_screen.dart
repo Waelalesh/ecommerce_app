@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/features/signup/ui/widgets/signup_username_email_phone_and_password.dart';
 import 'package:ecommerce_app/imports.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -23,7 +24,7 @@ class SignupScreen extends StatelessWidget {
                         text: "Sign Up",
                         textStyle: TextStyles.font28eggplantPurpleBold),
                     verticalSpace(30),
-                    const EmailAndPassword(),
+                    const SignupUsernameEmailPhoneAndPassword(),
                     verticalSpace(20),
                     AnimatedAppButton(
                         milliSecondsDuration: 1900,

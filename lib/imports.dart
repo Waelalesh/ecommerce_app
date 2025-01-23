@@ -15,6 +15,6 @@ export '../../../core/widgets/animated_app_text.dart';
 export '../../../core/widgets/animated_app_text_button.dart';
 export 'package:animate_do/animate_do.dart';
 export '../../../../core/assets_gen/assets.gen.dart';
-export 'package:ecommerce_app/features/login/ui/widgets/email_and_password.dart';
-export 'package:ecommerce_app/features/login/ui/widgets/top_images.dart';
+export 'package:ecommerce_app/features/login/ui/widgets/login_email_and_password.dart';
+export 'package:ecommerce_app/core/widgets/top_images.dart';
 export 'package:phone_form_field/phone_form_field.dart';

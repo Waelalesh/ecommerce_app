@@ -23,7 +23,7 @@ class LoginScreen extends StatelessWidget {
                         text: "Login",
                         textStyle: TextStyles.font28eggplantPurpleBold),
                     verticalSpace(30),
-                    const EmailAndPassword(),
+                    const LoginEmailAndPassword(),
                     verticalSpace(20),
                     AnimatedAppTextButton(
                         text: "Forgot Password?",
@@ -42,7 +42,6 @@ class LoginScreen extends StatelessWidget {
                     AnimatedAppTextButton(
                         text: "Create Account",
                         textStyle:
-                            // TextStyle(),
                             TextStyles.font13SemiTransparentDarkPurpleSemiBold,
                         milliSecondsDuration: 2000,
                         onPressed: () {

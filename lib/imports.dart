@@ -18,3 +18,5 @@ export '../../../../core/assets_gen/assets.gen.dart';
 export 'package:ecommerce_app/features/login/ui/widgets/login_email_and_password.dart';
 export 'package:ecommerce_app/core/widgets/top_images.dart';
 export 'package:phone_form_field/phone_form_field.dart';
+export 'package:ecommerce_app/core/helpers/app_regex.dart';
+export 'package:ecommerce_app/core/widgets/app_text_form_field.dart';

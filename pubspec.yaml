@@ -85,6 +85,9 @@ dependencies:
   # Flutter phone input integrated with flutter internationalization
   # https://pub.dev/packages/phone_form_field/install
   phone_form_field: ^10.0.3
+  # A Flutter package to use fonts from fonts.google.com.
+  # https://pub.dev/packages/google_fonts/install
+  google_fonts: ^6.2.1
 
 
 

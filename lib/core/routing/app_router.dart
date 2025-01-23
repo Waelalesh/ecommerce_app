@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/features/check_email/ui/check_email_screen.dart';
 import 'package:ecommerce_app/features/login/ui/login_screen.dart';
 import 'package:ecommerce_app/features/signup/ui/signup_screen.dart';
 import 'package:flutter/material.dart';
@@ -15,25 +16,27 @@ class AppRouter {
           child: const LoginScreen(),
           settings: settings,
           type: PageTransitionType.leftToRight,
-          // BlocProvider(
-          // create: (context) => getIt<LoginCubit>(),
-          // child:
         );
       case Routes.signUpScreen:
         return PageTransition(
             duration: const Duration(milliseconds: 1000),
             reverseDuration: const Duration(milliseconds: 1000),
             childCurrent: const LoginScreen(),
-            childBuilder: (context) => const SignupScreen(),
-            // child: ,
+            child: const SignupScreen(),
             settings: settings,
             type: PageTransitionType.bottomToTop,
-            reverseType: PageTransitionType.topToBottom
-
-            // BlocProvider(
-            // create: (context) => getIt<LoginCubit>(),
-            // child:
-            );
+            reverseType: PageTransitionType.topToBottom);
+      case Routes.checkEmailScreen:
+        return PageTransition(
+            alignment: Alignment.center,
+            duration: const Duration(milliseconds: 500),
+            reverseDuration: const Duration(milliseconds: 500),
+            // childCurrent: const LoginScreen(),
+            child: const CheckEmailScreen(),
+            // child: ,
+            settings: settings,
+            type: PageTransitionType.scale,
+            reverseType: PageTransitionType.topToBottom);
       // );
 
       default:

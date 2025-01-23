@@ -28,7 +28,10 @@ class SignupScreen extends StatelessWidget {
                     verticalSpace(20),
                     AnimatedAppButton(
                         milliSecondsDuration: 1900,
-                        onPressed: () {},
+                        onPressed: () {
+                          context.pushNamed(Routes.checkEmailScreen,
+                              arguments: "signup");
+                        },
                         color: ColorsManager.eggplantPurple,
                         height: 48,
                         text: "SignUp",

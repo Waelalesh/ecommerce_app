@@ -1,6 +1,4 @@
-import 'package:ecommerce_app/core/widgets/app_text_form_field.dart';
 
-import '../../../../core/helpers/app_regex.dart';
 import '../../../../imports.dart';
 
 class LoginEmailAndPassword extends StatelessWidget {

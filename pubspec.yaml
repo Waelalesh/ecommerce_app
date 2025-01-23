@@ -1,6 +1,6 @@
 name: ecommerce_app
 description: "A new Flutter project."
-publish_to: 'none' 
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
@@ -87,10 +87,7 @@ dependencies:
   phone_form_field: ^10.0.3
   # A Flutter package to use fonts from fonts.google.com.
   # https://pub.dev/packages/google_fonts/install
-  google_fonts: ^6.2.1
-
-
-
+  # google_fonts: ^6.2.1
 
 dev_dependencies:
   flutter_test:
@@ -122,3 +119,10 @@ flutter:
   assets:
     - assets/images/
     - assets/svgs/
+
+  fonts:
+    - family: PlayfairDisplay
+      fonts:
+        - asset: assets/fonts/play_fair_display/PlayfairDisplay-Italic.ttf
+        - asset: assets/fonts/play_fair_display/PlayfairDisplay.ttf
+          # style: italic

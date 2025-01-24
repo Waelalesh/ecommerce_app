@@ -30,7 +30,7 @@ class SignupScreen extends StatelessWidget {
                         milliSecondsDuration: 1900,
                         onPressed: () {
                           context.pushNamed(Routes.checkEmailScreen,
-                              arguments: "signup");
+                              arguments: Constants.signup);
                         },
                         color: ColorsManager.eggplantPurple,
                         height: 48,

@@ -6,6 +6,7 @@ class ColorsManager {
   static const Color paleMauve = Color(0x4BC487C6);
   static const Color semiTransparentDarkPurple = Color(0x9931274F);
   static const Color lightPurple = Color(0xFFC487C6);
+  static const Color normalPurple = Color(0xff544D80);
   static const Color mainBlue = Color(0xFF247CFF);
   static const Color darkBlue = Color(0xFF242424);
   static const Color lightBlue = Color(0xFFF4F8FF);

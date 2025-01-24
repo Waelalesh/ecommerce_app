@@ -88,6 +88,9 @@ dependencies:
   # A Flutter package to use fonts from fonts.google.com.
   # https://pub.dev/packages/google_fonts/install
   # google_fonts: ^6.2.1
+  # Fully customizable OTP Entry TextField for flutter, Widget accepts pin of any length.
+  # https://pub.dev/packages/flutter_otp_text_field/install
+  flutter_otp_text_field: ^1.4.0+2
 
 dev_dependencies:
   flutter_test:

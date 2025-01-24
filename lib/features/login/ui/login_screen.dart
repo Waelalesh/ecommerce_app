@@ -30,7 +30,8 @@ class LoginScreen extends StatelessWidget {
                         textStyle: TextStyles.font13LightPurpleMedium,
                         milliSecondsDuration: 1700,
                         onPressed: () {
-                          context.pushNamed(Routes.checkEmailScreen , arguments: "login");
+                          context.pushNamed(Routes.checkEmailScreen,
+                              arguments: Constants.login);
                         }),
                     verticalSpace(20),
                     AnimatedAppButton(

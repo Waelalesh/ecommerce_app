@@ -20,3 +20,5 @@ export 'package:ecommerce_app/core/widgets/top_images.dart';
 export 'package:phone_form_field/phone_form_field.dart';
 export 'package:ecommerce_app/core/helpers/app_regex.dart';
 export 'package:ecommerce_app/core/widgets/app_text_form_field.dart';
+export 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+

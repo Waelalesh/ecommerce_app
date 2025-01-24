@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/features/check_email/ui/check_email_screen.dart';
 import 'package:ecommerce_app/features/login/ui/login_screen.dart';
+import 'package:ecommerce_app/features/otp/ui/otp_screen.dart';
 import 'package:ecommerce_app/features/signup/ui/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
@@ -36,6 +37,17 @@ class AppRouter {
             // child: ,
             settings: settings,
             type: PageTransitionType.scale,
+            reverseType: PageTransitionType.topToBottom);
+      case Routes.otpScreen:
+        return PageTransition(
+            alignment: Alignment.center,
+            duration: const Duration(milliseconds: 500),
+            reverseDuration: const Duration(milliseconds: 500),
+            // childCurrent: const LoginScreen(),
+            child: const OtpScreen(),
+            // child: ,
+            settings: settings,
+            type: PageTransitionType.sharedAxisScale,
             reverseType: PageTransitionType.topToBottom);
       // );
 

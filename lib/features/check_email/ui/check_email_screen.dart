@@ -62,8 +62,11 @@ class CheckEmailScreen extends StatelessWidget {
                     AnimatedAppButton(
                         milliSecondsDuration: 1900,
                         onPressed: () {
-                          debugPrint(
-                              ModalRoute.of(context)!.settings.arguments as String,);
+                          context.pushNamed(Routes.otpScreen,
+                              arguments: ModalRoute.of(context)!
+                                  .settings
+                                  .arguments );
+                          
                         },
                         color: ColorsManager.eggplantPurple,
                         height: 48,

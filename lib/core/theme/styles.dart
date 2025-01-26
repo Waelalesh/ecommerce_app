@@ -18,6 +18,12 @@ class TextStyles {
     fontWeight: FontWeightHelper.medium,
     fontFamily: FontFamily.playfairDisplay,
   );
+  static TextStyle font16EggplantPurpleRegular = TextStyle(
+    fontSize: 16.sp,
+    color: ColorsManager.eggplantPurple,
+    fontWeight: FontWeightHelper.regular,
+    fontFamily: FontFamily.playfairDisplay,
+  );
   static TextStyle font15DoveGrayMedium = TextStyle(
     fontSize: 15.sp,
     color: ColorsManager.doveGray,

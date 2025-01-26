@@ -1,4 +1,3 @@
-
 import '../../../../imports.dart';
 
 class LoginEmailAndPassword extends StatelessWidget {
@@ -23,45 +22,30 @@ class LoginEmailAndPassword extends StatelessWidget {
                 ]),
             child: Column(
               children: <Widget>[
-                ///Username Field
-                // AppTextFormField(
-                //     suffixIcon: const Icon(Icons.person_outline),
-                //     validator: (value) {
-                //       if (value.isNullOrEmpty()) {
-                //         return "Please Enter a User Name.";
-                //       }
-                //       return null;
-                //     },
-                //     isLast: false,
-                //     controller: TextEditingController(),
-                //     type: TextFormFieldType.emailOrNormal,
-                //     hintText: "Username",
-                //     hintStyle: TextStyles.font15DoveGrayMedium),
-
                 /// Email Field
-                // AppTextFormField(
-                //   suffixIcon: const Icon(Icons.mail_outline),
-                //   validator: (value) {
-                //     if (value.isNullOrEmpty() ||
-                //         !AppRegex.isEmailValid(value!)) {
-                //       return "Please Enter a Valid Email.";
-                //     }
-                //     return null;
-                //   },
-                //   isLast: false,
-                //   controller: TextEditingController(),
-                //   type: TextFormFieldType.emailOrNormal,
-                //   hintText: "E-mail",
-                //   hintStyle: TextStyles.font15DoveGrayMedium,
-                // ),
+                AppTextFormField(
+                  suffixIcon: const Icon(Icons.mail_outline),
+                  validator: (value) {
+                    if (value.isNullOrEmpty() ||
+                        !AppRegex.isEmailValid(value!)) {
+                      return "Please Enter a Valid Email.";
+                    }
+                    return null;
+                  },
+                  isLast: false,
+                  controller: TextEditingController(),
+                  type: TextFormFieldType.emailOrNormal,
+                  hintText: "E-mail",
+                  hintStyle: TextStyles.font15DoveGrayMedium,
+                ),
 
                 /// Phone Number Field
-                AppTextFormField(
-                    suffixIcon: const Icon(Icons.call_outlined),
-                    isLast: false,
-                    controller: TextEditingController(),
-                    type: TextFormFieldType.phoneNumber,
-                    hintStyle: TextStyles.font15DoveGrayMedium),
+                // AppTextFormField(
+                //     suffixIcon: const Icon(Icons.call_outlined),
+                //     isLast: false,
+                //     controller: TextEditingController(),
+                //     type: TextFormFieldType.phoneNumber,
+                //     hintStyle: TextStyles.font15DoveGrayMedium),
 
                 /// Password Field
                 AppTextFormField(

@@ -14,7 +14,11 @@ class AnimatedAppText extends StatelessWidget {
   Widget build(BuildContext context) {
     return FadeInUp(
       duration: Duration(milliseconds: milliSecondsDuration),
-      child: Text(text, style: textStyle),
+      child: Text(
+        text,
+        style: textStyle,
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }

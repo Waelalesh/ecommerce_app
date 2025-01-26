@@ -1,13 +1,4 @@
-import 'package:ecommerce_app/features/check_email/ui/check_email_screen.dart';
-import 'package:ecommerce_app/features/login/ui/login_screen.dart';
-import 'package:ecommerce_app/features/otp/ui/otp_screen.dart';
-import 'package:ecommerce_app/features/signup/ui/signup_screen.dart';
-import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
-// import 'package:flutter_bloc/flutter_bloc.dart';
-
-// import '../di/dependency_injection.dart';
-import 'routes.dart';
+import 'package:ecommerce_app/imports.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -16,40 +7,43 @@ class AppRouter {
         return PageTransition(
           child: const LoginScreen(),
           settings: settings,
-          type: PageTransitionType.leftToRight,
+          type: PageTransitionType.topToBottom,
         );
       case Routes.signUpScreen:
         return PageTransition(
-            duration: const Duration(milliseconds: 1000),
-            reverseDuration: const Duration(milliseconds: 1000),
-            childCurrent: const LoginScreen(),
-            child: const SignupScreen(),
-            settings: settings,
-            type: PageTransitionType.bottomToTop,
-            reverseType: PageTransitionType.topToBottom);
+          duration: const Duration(milliseconds: 1000),
+          reverseDuration: const Duration(milliseconds: 1000),
+          childCurrent: const LoginScreen(),
+          child: const SignupScreen(),
+          settings: settings,
+          type: PageTransitionType.bottomToTop,
+        );
       case Routes.checkEmailScreen:
         return PageTransition(
-            alignment: Alignment.center,
-            duration: const Duration(milliseconds: 500),
-            reverseDuration: const Duration(milliseconds: 500),
-            // childCurrent: const LoginScreen(),
-            child: const CheckEmailScreen(),
-            // child: ,
-            settings: settings,
-            type: PageTransitionType.scale,
-            reverseType: PageTransitionType.topToBottom);
+          alignment: Alignment.center,
+          duration: const Duration(milliseconds: 1000),
+          reverseDuration: const Duration(milliseconds: 1000),
+          child: const CheckEmailScreen(),
+          settings: settings,
+          type: PageTransitionType.topToBottom,
+        );
       case Routes.otpScreen:
         return PageTransition(
-            alignment: Alignment.center,
-            duration: const Duration(milliseconds: 500),
-            reverseDuration: const Duration(milliseconds: 500),
-            // childCurrent: const LoginScreen(),
-            child: const OtpScreen(),
-            // child: ,
-            settings: settings,
-            type: PageTransitionType.sharedAxisScale,
-            reverseType: PageTransitionType.topToBottom);
-      // );
+          duration: const Duration(milliseconds: 1000),
+          reverseDuration: const Duration(milliseconds: 1000),
+          child: const OtpScreen(),
+          settings: settings,
+          type: PageTransitionType.rightToLeft,
+        );
+      case Routes.resetPasswordScreen:
+        return PageTransition(
+          childBuilder: (context) => const ResetPasswordScreen(),
+          // childCurrent: const OtpScreen(),
+          duration: const Duration(milliseconds: 1000),
+          reverseDuration: const Duration(milliseconds: 1000),
+          settings: settings,
+          type: PageTransitionType.rightToLeft,
+        );
 
       default:
         return null;

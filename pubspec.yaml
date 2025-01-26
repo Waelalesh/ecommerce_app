@@ -91,6 +91,10 @@ dependencies:
   # Fully customizable OTP Entry TextField for flutter, Widget accepts pin of any length.
   # https://pub.dev/packages/flutter_otp_text_field/install
   flutter_otp_text_field: ^1.4.0+2
+  # Toast Library for Flutter, Easily create toast messages in single line of code
+  # https://pub.dev/packages/fluttertoast/install
+  fluttertoast: ^8.2.10
+
 
 dev_dependencies:
   flutter_test:

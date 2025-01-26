@@ -22,23 +22,32 @@ class OtpScreen extends StatelessWidget {
                         milliSecondsDuration: 1500,
                         text: "Verification Code",
                         textStyle: TextStyles.font28eggplantPurpleBold),
-                    verticalSpace(30),
-                    OtpTextField(
-                      onSubmit: (value) {
-                        if (ModalRoute.of(context)!.settings.arguments ==
-                            Constants.signup) {
-                          context.pushNamedAndRemoveUntil(Routes.logInScreen,
-                              predicate: (predicate) => false);
-                        } else {
-                          debugPrint(
-                              "============================== ${ModalRoute.of(context)!.settings.arguments}");
-                        }
-                      },
-                      borderColor: ColorsManager.normalPurple,
-                      fieldWidth: 60.w,
-                      showFieldAsBox: true,
-                      numberOfFields: 5,
-                      borderRadius: BorderRadius.circular(25),
+                    verticalSpace(10),
+                    AnimatedAppText(
+                        milliSecondsDuration: 1700,
+                        text:
+                            "A Verification Code Has Been Sent To Your Account",
+                        textStyle: TextStyles.font16EggplantPurpleRegular),
+                    verticalSpace(20),
+                    FadeInUp(
+                      duration: const Duration(milliseconds: 1900),
+                      child: OtpTextField(
+                        onSubmit: (value) {
+                          if (ModalRoute.of(context)!.settings.arguments ==
+                              Constants.signup) {
+                            context.pushNamedAndRemoveUntil(Routes.logInScreen,
+                                predicate: (predicate) => false);
+                          } else {
+                            context.pushNamed(Routes.resetPasswordScreen);
+                          }
+                        },
+                        // fieldHeight: 100.h,
+                        borderColor: ColorsManager.normalPurple,
+                        fieldWidth: 60.w,
+                        showFieldAsBox: true,
+                        numberOfFields: 5,
+                        borderRadius: BorderRadius.circular(22),
+                      ),
                     ),
                   ],
                 ),

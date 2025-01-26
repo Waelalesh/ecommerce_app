@@ -5,7 +5,7 @@ class AppTextFormField extends StatefulWidget {
   final String? Function(String?)? validator;
   final TextFormFieldType type;
   final String? hintText;
-  final TextStyle hintStyle;
+  final TextStyle? hintStyle;
   final Color? backgroundColor;
 
   /// for check if last field to delete last border line
@@ -17,7 +17,7 @@ class AppTextFormField extends StatefulWidget {
     this.validator,
     required this.type,
     this.hintText,
-    required this.hintStyle,
+    this.hintStyle,
     this.backgroundColor,
 
     /// for check if last field to delete last border line
@@ -42,7 +42,7 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
                   Border(bottom: BorderSide(color: ColorsManager.paleMauve))),
       child: widget.type == TextFormFieldType.phoneNumber
           ? PhoneFormField(
-              decoration:   InputDecoration(
+              decoration: InputDecoration(
                 suffixIcon: widget.suffixIcon,
                 border: InputBorder.none,
               ),
@@ -85,11 +85,11 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
                         crossFadeState: obscureText
                             ? CrossFadeState.showFirst
                             : CrossFadeState.showSecond,
-                        duration: const Duration(microseconds: 500))
+                        duration: const Duration(milliseconds: 700))
                     : widget.suffixIcon,
                 border: InputBorder.none,
-                hintText: widget.hintText,
-                hintStyle: widget.hintStyle,
+                hintText: widget.hintText ?? "Empty"  ,
+                hintStyle: widget.hintStyle ?? TextStyles.font15DoveGrayMedium,
               )),
     );
   }

@@ -21,13 +21,14 @@ class OtpScreen extends StatelessWidget {
                     AnimatedAppText(
                         milliSecondsDuration: 1500,
                         text: "Verification Code",
-                        textStyle: TextStyles.font28eggplantPurpleBold),
+                        textStyle: TextStyles.font28eggplantPurpleBoldPlayfairDisplay),
                     verticalSpace(10),
                     AnimatedAppText(
                         milliSecondsDuration: 1700,
                         text:
                             "A Verification Code Has Been Sent To Your Account",
-                        textStyle: TextStyles.font16EggplantPurpleRegular),
+                        textStyle: TextStyles
+                            .font16EggplantPurpleRegularPlayfairDisplay),
                     verticalSpace(20),
                     FadeInUp(
                       duration: const Duration(milliseconds: 1900),

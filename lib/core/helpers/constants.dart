@@ -6,6 +6,13 @@ class SharedPrefKeys {
 
 enum TextFormFieldType { emailOrNormal, password, phoneNumber }
 
+enum NavigationItem {
+  home,
+  favorites,
+  cart,
+  profile
+}
+
 class Constants {
   static const String login = 'login';
   static const String signup = 'signup';

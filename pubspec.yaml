@@ -9,10 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
+  
   # State managment
   # https://pub.dev/packages/flutter_bloc/install
   flutter_bloc: ^9.0.0
@@ -48,7 +46,7 @@ dependencies:
   easy_localization: ^3.0.7
   # Splash Screen
   # https://pub.dev/packages/flutter_native_splash/install
-  flutter_native_splash: ^2.4.3
+  # flutter_native_splash: ^2.4.3
   # An SVG rendering and widget library for Flutter, which allows painting
   # https://pub.dev/packages/flutter_svg/install
   flutter_svg: ^2.0.15
@@ -57,16 +55,16 @@ dependencies:
   flutter_screenutil: ^5.9.3
   # Custom dropdown widget allows to add highly customizable dropdown widget in project
   # https://pub.dev/packages/animated_custom_dropdown/install
-  animated_custom_dropdown: ^3.1.1
+  # animated_custom_dropdown: ^3.1.1
   # Collection of cool and beautiful text animations
   # https://pub.dev/packages/animated_text_kit/install
-  animated_text_kit: ^4.2.2
+  # animated_text_kit: ^4.2.2
   # For fireBase distribution and firebase services
   # https://pub.dev/packages/firebase_core/install
-  firebase_core: ^3.9.0
+  # firebase_core: ^3.9.0
   # A package provides an easy way to add shimmer effect
   # https://pub.dev/packages/shimmer/install
-  shimmer: ^3.0.0
+  # shimmer: ^3.0.0
   # Reading and writing simple key-value pairs
   # https://pub.dev/packages/shared_preferences/install
   shared_preferences: ^2.3.5
@@ -81,20 +79,25 @@ dependencies:
   page_transition: ^2.2.1
   # A customised Flutter TextFormField to input international phone number
   # https://pub.dev/packages/intl_phone_field/install
-  intl_phone_field: ^3.2.0
+  # intl_phone_field: ^3.2.0
   # Flutter phone input integrated with flutter internationalization
   # https://pub.dev/packages/phone_form_field/install
   phone_form_field: ^10.0.3
   # A Flutter package to use fonts from fonts.google.com.
   # https://pub.dev/packages/google_fonts/install
-  # google_fonts: ^6.2.1
+  # google_fonts: ^6.1.0
   # Fully customizable OTP Entry TextField for flutter, Widget accepts pin of any length.
   # https://pub.dev/packages/flutter_otp_text_field/install
   flutter_otp_text_field: ^1.4.0+2
   # Toast Library for Flutter, Easily create toast messages in single line of code
   # https://pub.dev/packages/fluttertoast/install
   fluttertoast: ^8.2.10
-
+  # Stunning Animating Curved Shape Navigation Bar. Adjustable color, background color, animation curve, animation duration
+  # https://pub.dev/packages/curved_navigation_bar/install
+  curved_navigation_bar: ^1.0.6
+  # A Flutter package with custom implementation of the Side Menu (Drawer)
+  # https://pub.dev/packages/flutter_zoom_drawer/install
+  flutter_zoom_drawer: ^3.2.0
 
 dev_dependencies:
   flutter_test:
@@ -117,15 +120,11 @@ flutter_gen:
     lottie: true
 
 flutter:
-  # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
-  # the material Icons class.
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/
     - assets/svgs/
+    - assets/images/
 
   fonts:
     - family: PlayfairDisplay
@@ -133,3 +132,17 @@ flutter:
         - asset: assets/fonts/play_fair_display/PlayfairDisplay-Italic.ttf
         - asset: assets/fonts/play_fair_display/PlayfairDisplay.ttf
           # style: italic
+    - family: AirbnbCerialApp
+      fonts:
+        - asset: assets/fonts/airbnb_cereal_app/airbnb-cereal-app-medium.ttf
+        - asset: assets/fonts/airbnb_cereal_app/airbnb-cereal-app-book.ttf
+          # style: italic
+    # - family: Poppins
+    #   fonts:
+    #     - asset: assets/fonts/Poppins-Regular.ttf
+    #     - asset: assets/fonts/Poppins-Medium.ttf
+    #       weight: 500
+    #     - asset: assets/fonts/Poppins-SemiBold.ttf
+    #       weight: 600
+    #     - asset: assets/fonts/Poppins-Bold.ttf
+    #       weight: 700

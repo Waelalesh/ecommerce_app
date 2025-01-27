@@ -1,4 +1,3 @@
-
 import '../../../../imports.dart';
 
 class SignupUsernameEmailPhoneAndPassword extends StatelessWidget {
@@ -36,7 +35,7 @@ class SignupUsernameEmailPhoneAndPassword extends StatelessWidget {
                     controller: TextEditingController(),
                     type: TextFormFieldType.emailOrNormal,
                     hintText: "Username",
-                    hintStyle: TextStyles.font15DoveGrayMedium),
+                    hintStyle: TextStyles.font15DoveGrayMediumPlayfairDisplay),
 
                 /// Email Field
                 AppTextFormField(
@@ -52,7 +51,7 @@ class SignupUsernameEmailPhoneAndPassword extends StatelessWidget {
                   controller: TextEditingController(),
                   type: TextFormFieldType.emailOrNormal,
                   hintText: "E-mail",
-                  hintStyle: TextStyles.font15DoveGrayMedium,
+                  hintStyle: TextStyles.font15DoveGrayMediumPlayfairDisplay,
                 ),
 
                 /// Phone Number Field
@@ -61,7 +60,7 @@ class SignupUsernameEmailPhoneAndPassword extends StatelessWidget {
                     isLast: false,
                     controller: TextEditingController(),
                     type: TextFormFieldType.phoneNumber,
-                    hintStyle: TextStyles.font15DoveGrayMedium),
+                    hintStyle: TextStyles.font15DoveGrayMediumPlayfairDisplay),
 
                 /// Password Field
                 AppTextFormField(
@@ -75,7 +74,7 @@ class SignupUsernameEmailPhoneAndPassword extends StatelessWidget {
                     controller: TextEditingController(),
                     type: TextFormFieldType.password,
                     hintText: "Password",
-                    hintStyle: TextStyles.font15DoveGrayMedium),
+                    hintStyle: TextStyles.font15DoveGrayMediumPlayfairDisplay),
 
                 /// Confirm Password Field
                 AppTextFormField(
@@ -89,7 +88,7 @@ class SignupUsernameEmailPhoneAndPassword extends StatelessWidget {
                     controller: TextEditingController(),
                     type: TextFormFieldType.password,
                     hintText: "Confirm Password",
-                    hintStyle: TextStyles.font15DoveGrayMedium),
+                    hintStyle: TextStyles.font15DoveGrayMediumPlayfairDisplay),
               ],
             ),
           ),

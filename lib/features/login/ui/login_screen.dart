@@ -1,5 +1,4 @@
-
-
+import 'package:ecommerce_app/core/widgets/main_layout.dart';
 import '../../../imports.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -24,13 +23,15 @@ class LoginScreen extends StatelessWidget {
                       AnimatedAppText(
                           milliSecondsDuration: 1500,
                           text: "Login",
-                          textStyle: TextStyles.font28eggplantPurpleBold),
+                          textStyle: TextStyles
+                              .font28eggplantPurpleBoldPlayfairDisplay),
                       verticalSpace(30),
                       const LoginEmailAndPassword(),
                       verticalSpace(20),
                       AnimatedAppTextButton(
                           text: "Forgot Password?",
-                          textStyle: TextStyles.font13LightPurpleMedium,
+                          textStyle:
+                              TextStyles.font13LightPurpleMediumPlayfairDisplay,
                           milliSecondsDuration: 1700,
                           onPressed: () {
                             context.pushNamed(Routes.checkEmailScreen,
@@ -39,16 +40,22 @@ class LoginScreen extends StatelessWidget {
                       verticalSpace(20),
                       AnimatedAppButton(
                           milliSecondsDuration: 1900,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (builder) => const MainLayout()));
+                          },
                           color: ColorsManager.eggplantPurple,
                           height: 48,
                           text: "Login",
-                          textStyle: TextStyles.font15WhiteMedium),
+                          textStyle:
+                              TextStyles.font15WhiteMediumPlayfairDisplay),
                       verticalSpace(20),
                       AnimatedAppTextButton(
                           text: "Create Account",
                           textStyle: TextStyles
-                              .font13SemiTransparentDarkPurpleSemiBold,
+                              .font13SemiTransparentDarkPurpleSemiBoldPlayfairDisplay,
                           milliSecondsDuration: 2000,
                           onPressed: () {
                             context.pushNamed(Routes.signUpScreen);

@@ -36,16 +36,8 @@ class LoginEmailAndPassword extends StatelessWidget {
                   controller: TextEditingController(),
                   type: TextFormFieldType.emailOrNormal,
                   hintText: "E-mail",
-                  hintStyle: TextStyles.font15DoveGrayMedium,
+                  hintStyle: TextStyles.font15DoveGrayMediumPlayfairDisplay,
                 ),
-
-                /// Phone Number Field
-                // AppTextFormField(
-                //     suffixIcon: const Icon(Icons.call_outlined),
-                //     isLast: false,
-                //     controller: TextEditingController(),
-                //     type: TextFormFieldType.phoneNumber,
-                //     hintStyle: TextStyles.font15DoveGrayMedium),
 
                 /// Password Field
                 AppTextFormField(
@@ -55,11 +47,11 @@ class LoginEmailAndPassword extends StatelessWidget {
                       }
                       return null;
                     },
-                    isLast: false,
+                    isLast: true,
                     controller: TextEditingController(),
                     type: TextFormFieldType.password,
                     hintText: "Password",
-                    hintStyle: TextStyles.font15DoveGrayMedium),
+                    hintStyle: TextStyles.font15DoveGrayMediumPlayfairDisplay),
               ],
             ),
           ),

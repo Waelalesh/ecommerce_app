@@ -22,7 +22,8 @@ class SignupScreen extends StatelessWidget {
                     AnimatedAppText(
                         milliSecondsDuration: 1500,
                         text: "Sign Up",
-                        textStyle: TextStyles.font28eggplantPurpleBold),
+                        textStyle:
+                            TextStyles.font28eggplantPurpleBoldPlayfairDisplay),
                     verticalSpace(30),
                     const SignupUsernameEmailPhoneAndPassword(),
                     verticalSpace(20),
@@ -35,12 +36,12 @@ class SignupScreen extends StatelessWidget {
                         color: ColorsManager.eggplantPurple,
                         height: 48,
                         text: "SignUp",
-                        textStyle: TextStyles.font15WhiteMedium),
+                        textStyle: TextStyles.font15WhiteMediumPlayfairDisplay),
                     verticalSpace(20),
                     AnimatedAppTextButton(
                         text: "Login",
                         textStyle:
-                            TextStyles.font13SemiTransparentDarkPurpleSemiBold,
+                            TextStyles.font13SemiTransparentDarkPurpleSemiBoldPlayfairDisplay,
                         milliSecondsDuration: 2000,
                         onPressed: () {
                           context.pop();

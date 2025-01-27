@@ -10,6 +10,9 @@
 class FontFamily {
   FontFamily._();
 
+  /// Font family: AirbnbCerialApp
+  static const String airbnbCerialApp = 'AirbnbCerialApp';
+
   /// Font family: PlayfairDisplay
   static const String playfairDisplay = 'PlayfairDisplay';
 }

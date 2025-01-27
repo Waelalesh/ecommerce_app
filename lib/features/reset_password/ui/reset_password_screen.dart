@@ -23,7 +23,8 @@ class ResetPasswordScreen extends StatelessWidget {
                     AnimatedAppText(
                         milliSecondsDuration: 1500,
                         text: "Reset Password",
-                        textStyle: TextStyles.font28eggplantPurpleBold),
+                        textStyle:
+                            TextStyles.font28eggplantPurpleBoldPlayfairDisplay),
                     verticalSpace(30),
                     const NewAndConfirmPassword(
                       milliSecondsDuration: 1700,
@@ -38,7 +39,7 @@ class ResetPasswordScreen extends StatelessWidget {
                         color: ColorsManager.eggplantPurple,
                         height: 48,
                         text: "Confirm Password",
-                        textStyle: TextStyles.font15WhiteMedium),
+                        textStyle: TextStyles.font15WhiteMediumPlayfairDisplay),
                     verticalSpace(20),
                   ],
                 ),

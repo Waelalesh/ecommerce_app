@@ -22,7 +22,7 @@ class CheckEmailScreen extends StatelessWidget {
                     AnimatedAppText(
                         milliSecondsDuration: 1500,
                         text: "Check E-Mail",
-                        textStyle: TextStyles.font28eggplantPurpleBold),
+                        textStyle: TextStyles.font28eggplantPurpleBoldPlayfairDisplay),
                     verticalSpace(30),
 
                     /// Email Field
@@ -54,7 +54,8 @@ class CheckEmailScreen extends StatelessWidget {
                           controller: TextEditingController(),
                           type: TextFormFieldType.emailOrNormal,
                           hintText: "E-mail",
-                          hintStyle: TextStyles.font15DoveGrayMedium,
+                          hintStyle:
+                              TextStyles.font15DoveGrayMediumPlayfairDisplay,
                         ),
                       ),
                     ),
@@ -63,15 +64,13 @@ class CheckEmailScreen extends StatelessWidget {
                         milliSecondsDuration: 1900,
                         onPressed: () {
                           context.pushNamed(Routes.otpScreen,
-                              arguments: ModalRoute.of(context)!
-                                  .settings
-                                  .arguments );
-                          
+                              arguments:
+                                  ModalRoute.of(context)!.settings.arguments);
                         },
                         color: ColorsManager.eggplantPurple,
                         height: 48,
                         text: "Check E-Mail",
-                        textStyle: TextStyles.font15WhiteMedium),
+                        textStyle: TextStyles.font15WhiteMediumPlayfairDisplay),
                   ],
                 ),
               )

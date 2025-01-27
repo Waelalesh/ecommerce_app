@@ -7,6 +7,7 @@ class AppTextFormField extends StatefulWidget {
   final String? hintText;
   final TextStyle? hintStyle;
   final Color? backgroundColor;
+  final Widget? prefixIcon;
 
   /// for check if last field to delete last border line
   final bool isLast;
@@ -23,6 +24,7 @@ class AppTextFormField extends StatefulWidget {
     /// for check if last field to delete last border line
     required this.isLast,
     this.suffixIcon,
+    this.prefixIcon,
   });
 
   @override
@@ -71,6 +73,7 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
               controller: widget.controller,
               validator: widget.validator,
               decoration: InputDecoration(
+                prefixIcon: widget.prefixIcon,
                 suffixIcon: widget.type == TextFormFieldType.password
                     ? AnimatedCrossFade(
                         firstChild: IconButton(
@@ -88,8 +91,9 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
                         duration: const Duration(milliseconds: 700))
                     : widget.suffixIcon,
                 border: InputBorder.none,
-                hintText: widget.hintText ?? "Empty"  ,
-                hintStyle: widget.hintStyle ?? TextStyles.font15DoveGrayMedium,
+                hintText: widget.hintText ?? "Empty",
+                hintStyle: widget.hintStyle ??
+                    TextStyles.font15DoveGrayMediumPlayfairDisplay,
               )),
     );
   }

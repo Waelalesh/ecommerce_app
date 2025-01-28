@@ -30,7 +30,7 @@ class SignupScreen extends StatelessWidget {
                     AnimatedAppButton(
                         milliSecondsDuration: 1900,
                         onPressed: () {
-                          context.pushNamed(Routes.checkEmailScreen,
+                          context.pushNamed(Routes.otpScreen,
                               arguments: Constants.signup);
                         },
                         color: ColorsManager.eggplantPurple,

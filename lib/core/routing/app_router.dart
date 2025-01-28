@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/widgets/main_layout.dart';
 import 'package:ecommerce_app/imports.dart';
 
 class AppRouter {
@@ -5,7 +6,10 @@ class AppRouter {
     switch (settings.name) {
       case Routes.logInScreen:
         return PageTransition(
-          child: const LoginScreen(),
+          child: BlocProvider(
+            create: (context) => getIt<LoginCubit>(),
+            child: const LoginScreen(),
+          ),
           settings: settings,
           type: PageTransitionType.topToBottom,
         );
@@ -37,12 +41,20 @@ class AppRouter {
         );
       case Routes.resetPasswordScreen:
         return PageTransition(
-          childBuilder: (context) => const ResetPasswordScreen(),
-          // childCurrent: const OtpScreen(),
+          alignment: Alignment.center,
+          child: const ResetPasswordScreen(),
           duration: const Duration(milliseconds: 1000),
           reverseDuration: const Duration(milliseconds: 1000),
           settings: settings,
-          type: PageTransitionType.rightToLeft,
+          type: PageTransitionType.scale,
+        );
+      case Routes.mainLayoutScreen:
+        return PageTransition(
+          child: const MainLayout(),
+          duration: const Duration(milliseconds: 1000),
+          reverseDuration: const Duration(milliseconds: 1000),
+          settings: settings,
+          type: PageTransitionType.fade,
         );
 
       default:

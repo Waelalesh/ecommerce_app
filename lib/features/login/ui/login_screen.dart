@@ -1,4 +1,8 @@
-import 'package:ecommerce_app/core/widgets/main_layout.dart';
+// ignore_for_file: use_build_context_synchronously
+
+import 'package:ecommerce_app/core/widgets/top_snack_bar.dart';
+import 'package:ecommerce_app/features/login/ui/widgets/login_bloc_listner.dart';
+
 import '../../../imports.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -40,11 +44,21 @@ class LoginScreen extends StatelessWidget {
                       verticalSpace(20),
                       AnimatedAppButton(
                           milliSecondsDuration: 1900,
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (builder) => const MainLayout()));
+                          onPressed: () async {
+                            showSuccessSnackbar(context,
+                                message: "Login successful", title: "Success");
+                            await Future.delayed(const Duration(seconds: 4));
+                            showDialog(
+                                context: context,
+                                builder: (builder) => Center(
+                                    child: Assets.lottieAnimation.loadingCircle
+                                        .lottie()));
+                            Future.delayed(const Duration(seconds: 4))
+                                .then((onValue) {
+                              context.pushNamed(
+                                Routes.mainLayoutScreen,
+                              );
+                            });
                           },
                           color: ColorsManager.eggplantPurple,
                           height: 48,
@@ -62,12 +76,19 @@ class LoginScreen extends StatelessWidget {
                           })
                     ],
                   ),
-                )
+                ),
+                const LoginBlocListner()
               ],
             ),
           ),
         ),
       ),
     );
+  }
+
+  void validateThenDoLogin(BuildContext context) {
+    if (context.read<LoginCubit>().formKey.currentState!.validate()) {
+      context.read<LoginCubit>().emitLoginStates();
+    }
   }
 }

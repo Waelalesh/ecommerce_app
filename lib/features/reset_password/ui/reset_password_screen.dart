@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/core/widgets/top_snack_bar.dart';
 import 'package:ecommerce_app/imports.dart';
 
 import 'widgets/new_and_confirm_password.dart';
@@ -33,8 +34,16 @@ class ResetPasswordScreen extends StatelessWidget {
                     AnimatedAppButton(
                         milliSecondsDuration: 1900,
                         onPressed: () {
-                          context.pushNamedAndRemoveUntil(Routes.logInScreen,
-                              predicate: (route) => false);
+                          showErrorSnackbar(context,
+                              title: "Error",
+                              message:
+                                  "Error occurred while resetting password. Please try again.");
+                          Future.delayed(const Duration(seconds: 4))
+                              .then((onValue) {
+                            context.pushNamed(
+                              Routes.logInScreen,
+                            );
+                          });
                         },
                         color: ColorsManager.eggplantPurple,
                         height: 48,

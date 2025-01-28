@@ -1,4 +1,5 @@
-import 'package:ecommerce_app/features/signup/ui/widgets/signup_username_email_phone_and_password.dart';
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:ecommerce_app/imports.dart';
 
 class SignupScreen extends StatelessWidget {
@@ -29,9 +30,20 @@ class SignupScreen extends StatelessWidget {
                     verticalSpace(20),
                     AnimatedAppButton(
                         milliSecondsDuration: 1900,
-                        onPressed: () {
-                          context.pushNamed(Routes.otpScreen,
-                              arguments: Constants.signup);
+                        onPressed: () async {
+                          showSuccessSnackbar(context,
+                              message: "Signup Successful", title: "Success");
+                          await Future.delayed(const Duration(seconds: 4));
+                          showDialog(
+                              context: context,
+                              builder: (builder) => Center(
+                                  child: Assets.lottieAnimation.loadingTelegram
+                                      .lottie()));
+                          Future.delayed(const Duration(seconds: 4))
+                              .then((onValue) {
+                            context.pushNamed(Routes.otpScreen,
+                                arguments: Constants.signup);
+                          });
                         },
                         color: ColorsManager.eggplantPurple,
                         height: 48,
@@ -40,19 +52,26 @@ class SignupScreen extends StatelessWidget {
                     verticalSpace(20),
                     AnimatedAppTextButton(
                         text: "Login",
-                        textStyle:
-                            TextStyles.font13SemiTransparentDarkPurpleSemiBoldPlayfairDisplay,
+                        textStyle: TextStyles
+                            .font13SemiTransparentDarkPurpleSemiBoldPlayfairDisplay,
                         milliSecondsDuration: 2000,
                         onPressed: () {
                           context.pop();
                         }),
                   ],
                 ),
-              )
+              ),
+              const SignupBlocListener()
             ],
           ),
         ),
       ),
     );
+  }
+
+  void validateThenDoSignup(BuildContext context) {
+    if (context.read<SignupCubit>().formKey.currentState!.validate()) {
+      context.read<SignupCubit>().emitSignupStates();
+    }
   }
 }

@@ -8,6 +8,7 @@ class SignupUsernameEmailPhoneAndPassword extends StatelessWidget {
     return FadeInUp(
         duration: const Duration(milliseconds: 1700),
         child: Form(
+          key: context.read<SignupCubit>().formKey,
           child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -32,7 +33,7 @@ class SignupUsernameEmailPhoneAndPassword extends StatelessWidget {
                       return null;
                     },
                     isLast: false,
-                    controller: TextEditingController(),
+                    controller: context.read<SignupCubit>().nameController,
                     type: TextFormFieldType.emailOrNormal,
                     hintText: "Username",
                     hintStyle: TextStyles.font15DoveGrayMediumPlayfairDisplay),
@@ -48,7 +49,7 @@ class SignupUsernameEmailPhoneAndPassword extends StatelessWidget {
                     return null;
                   },
                   isLast: false,
-                  controller: TextEditingController(),
+                  controller: context.read<SignupCubit>().emailController,
                   type: TextFormFieldType.emailOrNormal,
                   hintText: "E-mail",
                   hintStyle: TextStyles.font15DoveGrayMediumPlayfairDisplay,
@@ -58,7 +59,7 @@ class SignupUsernameEmailPhoneAndPassword extends StatelessWidget {
                 AppTextFormField(
                     suffixIcon: const Icon(Icons.call_outlined),
                     isLast: false,
-                    controller: TextEditingController(),
+                    controller: context.read<SignupCubit>().phoneController,
                     type: TextFormFieldType.phoneNumber,
                     hintStyle: TextStyles.font15DoveGrayMediumPlayfairDisplay),
 
@@ -71,7 +72,7 @@ class SignupUsernameEmailPhoneAndPassword extends StatelessWidget {
                       return null;
                     },
                     isLast: false,
-                    controller: TextEditingController(),
+                    controller: context.read<SignupCubit>().passwordController,
                     type: TextFormFieldType.password,
                     hintText: "Password",
                     hintStyle: TextStyles.font15DoveGrayMediumPlayfairDisplay),
@@ -85,7 +86,9 @@ class SignupUsernameEmailPhoneAndPassword extends StatelessWidget {
                       return null;
                     },
                     isLast: true,
-                    controller: TextEditingController(),
+                    controller: context
+                        .read<SignupCubit>()
+                        .passwordConfirmationController,
                     type: TextFormFieldType.password,
                     hintText: "Confirm Password",
                     hintStyle: TextStyles.font15DoveGrayMediumPlayfairDisplay),

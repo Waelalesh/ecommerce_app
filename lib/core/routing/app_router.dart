@@ -18,7 +18,9 @@ class AppRouter {
           duration: const Duration(milliseconds: 1000),
           reverseDuration: const Duration(milliseconds: 1000),
           childCurrent: const LoginScreen(),
-          child: const SignupScreen(),
+          child: BlocProvider(
+              create: (context) => getIt<SignupCubit>(),
+              child: const SignupScreen()),
           settings: settings,
           type: PageTransitionType.bottomToTop,
         );

@@ -1,9 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:ecommerce_app/core/widgets/top_snack_bar.dart';
-import 'package:ecommerce_app/features/login/ui/widgets/login_bloc_listner.dart';
-
-import '../../../imports.dart';
+import 'package:ecommerce_app/imports.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

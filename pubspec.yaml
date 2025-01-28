@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.8
-  
+
   # State managment
   # https://pub.dev/packages/flutter_bloc/install
   flutter_bloc: ^9.0.0
@@ -98,6 +98,12 @@ dependencies:
   # A Flutter package with custom implementation of the Side Menu (Drawer)
   # https://pub.dev/packages/flutter_zoom_drawer/install
   flutter_zoom_drawer: ^3.2.0
+  # it is made to replace Snackbars and Toasts
+  # https://pub.dev/packages/another_flushbar/install
+  another_flushbar: ^1.12.30
+  # Render After Effects animations natively on Flutter. This package is a pure Dart implementation of a Lottie player
+  # https://pub.dev/packages/lotti
+  lottie: ^3.2.0
 
 dev_dependencies:
   flutter_test:
@@ -125,6 +131,7 @@ flutter:
   assets:
     - assets/svgs/
     - assets/images/
+    - assets/lottie_animation/
 
   fonts:
     - family: PlayfairDisplay

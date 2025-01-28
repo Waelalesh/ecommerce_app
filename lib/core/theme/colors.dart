@@ -16,5 +16,20 @@ class ColorsManager {
   static const Color lightGray = Color(0xFF707B81);
   static const Color lighterGray = Color(0xFFF8F9FA);
   static const Color doveGray = Color(0xFF616161);
+  /// Error colors
+  static const Color errorDarkRed = Color(0xFFE53935); // Deep red
+  static const Color errorLightRed = Color(0xFFEF5350); // Medium red
+  static const Color errorSoftRed = Color(0xFFFF8A80); // Soft coral red
+
+  /// Error Gradient
+  static const LinearGradient errorGradient = LinearGradient(
+    begin: Alignment.topLeft,
+    end: Alignment.bottomRight,
+    colors: [
+      errorDarkRed,
+      errorLightRed,
+      errorSoftRed,
+    ],
+  );
 }
 ///

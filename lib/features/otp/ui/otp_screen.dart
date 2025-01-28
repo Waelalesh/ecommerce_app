@@ -21,7 +21,8 @@ class OtpScreen extends StatelessWidget {
                     AnimatedAppText(
                         milliSecondsDuration: 1500,
                         text: "Verification Code",
-                        textStyle: TextStyles.font28eggplantPurpleBoldPlayfairDisplay),
+                        textStyle:
+                            TextStyles.font28eggplantPurpleBoldPlayfairDisplay),
                     verticalSpace(10),
                     AnimatedAppText(
                         milliSecondsDuration: 1700,
@@ -33,6 +34,7 @@ class OtpScreen extends StatelessWidget {
                     FadeInUp(
                       duration: const Duration(milliseconds: 1900),
                       child: OtpTextField(
+                        keyboardType: TextInputType.number,
                         onSubmit: (value) {
                           if (ModalRoute.of(context)!.settings.arguments ==
                               Constants.signup) {

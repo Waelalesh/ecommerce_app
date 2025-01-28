@@ -1,3 +1,4 @@
+
 import '../../../../imports.dart';
 
 class LoginEmailAndPassword extends StatelessWidget {
@@ -8,6 +9,7 @@ class LoginEmailAndPassword extends StatelessWidget {
     return FadeInUp(
         duration: const Duration(milliseconds: 1700),
         child: Form(
+          key: context.read<LoginCubit>().formKey,
           child: Container(
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -33,7 +35,7 @@ class LoginEmailAndPassword extends StatelessWidget {
                     return null;
                   },
                   isLast: false,
-                  controller: TextEditingController(),
+                  controller: context.read<LoginCubit>().emailController,
                   type: TextFormFieldType.emailOrNormal,
                   hintText: "E-mail",
                   hintStyle: TextStyles.font15DoveGrayMediumPlayfairDisplay,
@@ -48,7 +50,7 @@ class LoginEmailAndPassword extends StatelessWidget {
                       return null;
                     },
                     isLast: true,
-                    controller: TextEditingController(),
+                    controller: context.read<LoginCubit>().passwordController,
                     type: TextFormFieldType.password,
                     hintText: "Password",
                     hintStyle: TextStyles.font15DoveGrayMediumPlayfairDisplay),

@@ -5,17 +5,18 @@ import 'package:get_it/get_it.dart';
 // import '../../name/logic/login_cubit.dart';
 // import '../networking/api_service.dart';
 // import '../networking/dio_factory.dart';
+import 'package:ecommerce_app/imports.dart';
 
 final getIt = GetIt.instance;
 
 Future<void> setupGetIt() async {
   // Dio & ApiServices
-  // Dio dio = DioFactory.getDio();
-  // getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
+  Dio dio = DioFactory.getDio();
+  getIt.registerLazySingleton<ApiService>(() => ApiService(dio));
 
   // //login
-  // getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
-  // getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
+  getIt.registerLazySingleton<LoginRepo>(() => LoginRepo(getIt()));
+  getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
 
   // getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt()));
 }

@@ -38,17 +38,30 @@ class $AssetsLottieAnimationGen {
   LottieGenImage get loadingCircle =>
       const LottieGenImage('assets/lottie_animation/loading_circle.json');
 
+  /// File path: assets/lottie_animation/loading_rocket.json
+  LottieGenImage get loadingRocket =>
+      const LottieGenImage('assets/lottie_animation/loading_rocket.json');
+
   /// File path: assets/lottie_animation/loading_telegram.json
   LottieGenImage get loadingTelegram =>
       const LottieGenImage('assets/lottie_animation/loading_telegram.json');
+
+  /// File path: assets/lottie_animation/loading_telegraph.json
+  LottieGenImage get loadingTelegraph =>
+      const LottieGenImage('assets/lottie_animation/loading_telegraph.json');
 
   /// File path: assets/lottie_animation/loaidng_colors.json
   LottieGenImage get loaidngColors =>
       const LottieGenImage('assets/lottie_animation/loaidng_colors.json');
 
   /// List of all assets
-  List<LottieGenImage> get values =>
-      [loadingCircle, loadingTelegram, loaidngColors];
+  List<LottieGenImage> get values => [
+        loadingCircle,
+        loadingRocket,
+        loadingTelegram,
+        loadingTelegraph,
+        loaidngColors
+      ];
 }
 
 class $AssetsSvgsGen {

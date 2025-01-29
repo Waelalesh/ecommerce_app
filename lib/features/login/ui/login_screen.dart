@@ -42,14 +42,16 @@ class LoginScreen extends StatelessWidget {
                       AnimatedAppButton(
                           milliSecondsDuration: 1900,
                           onPressed: () async {
-                            showSuccessSnackbar(context,
-                                message: "Login successful", title: "Success");
-                            await Future.delayed(const Duration(seconds: 4));
                             showDialog(
                                 context: context,
                                 builder: (builder) => Center(
                                     child: Assets.lottieAnimation.loadingCircle
                                         .lottie()));
+                            await Future.delayed(const Duration(seconds: 4));
+                            context.pop();
+                            showSuccessSnackbar(context,
+                                message: "Login successful", title: "Success");
+
                             Future.delayed(const Duration(seconds: 4))
                                 .then((onValue) {
                               context.pushNamed(

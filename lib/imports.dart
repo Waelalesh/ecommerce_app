@@ -1,6 +1,12 @@
 export "package:another_flushbar/flushbar.dart";
 export 'package:ecommerce_app/features/login/data/repos/login_repo.dart';
+export 'package:get_it/get_it.dart';
 export 'dart:io';
+export 'package:ecommerce_app/features/main_screen_navigation_bar/main_screen_navigation_bar.dart';
+export 'package:ecommerce_app/features/home/ui/home_screen.dart';
+export 'package:ecommerce_app/features/main_screen_navigation_bar/widgets/r_p_s_custom_painter.dart';
+export 'package:ecommerce_app/features/check_email/data/repos/check_email_repo.dart';
+export 'package:ecommerce_app/features/check_email/logic/check_email_state.dart';
 export 'package:ecommerce_app/core/assets_gen/assets.gen.dart';
 export 'package:ecommerce_app/core/widgets/top_snack_bar.dart';
 export 'package:ecommerce_app/features/login/ui/widgets/login_bloc_listner.dart';
@@ -63,3 +69,5 @@ export "package:ecommerce_app/features/login/data/models/login_response.dart";
 export "package:ecommerce_app/core/networking/api_error_handler.dart";
 export 'package:ecommerce_app/core/di/dependency_injection.dart';
 export 'package:ecommerce_app/core/helpers/shared_pref_helper.dart';
+export 'package:ecommerce_app/features/check_email/logic/check_email_cubit.dart';
+export 'package:ecommerce_app/features/signup/data/repos/sign_up_repo.dart';

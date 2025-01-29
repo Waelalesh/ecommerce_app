@@ -1,6 +1,5 @@
 // import 'package:dio/dio.dart';
-import 'package:ecommerce_app/features/signup/data/repos/sign_up_repo.dart';
-import 'package:get_it/get_it.dart';
+
 
 // import '../../name/data/repos/login_repo.dart';
 // import '../../name/logic/login_cubit.dart';
@@ -22,6 +21,9 @@ Future<void> setupGetIt() async {
   /// signup
   getIt.registerLazySingleton<SignupRepo>(() => SignupRepo(getIt()));
   getIt.registerFactory<SignupCubit>(() => SignupCubit(getIt()));
+  /// check Email
+  getIt.registerLazySingleton<CheckEmailRepo>(() => CheckEmailRepo(getIt()));
+  getIt.registerFactory<CheckEmailCubit>(() => CheckEmailCubit(getIt()));
 
   // getIt.registerFactory<HomeCubit>(() => HomeCubit(getIt()));
 }

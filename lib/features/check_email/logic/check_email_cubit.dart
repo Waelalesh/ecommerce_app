@@ -9,7 +9,7 @@ class CheckEmailCubit extends Cubit<CheckEmailState> {
 
   final formKey = GlobalKey<FormState>();
 
-  void emitSignupStates() async {
+  void emitCheckEmailStates() async {
     emit(const CheckEmailState.checkEmailLoading());
     final response = await _checkEmailRepo.checkEmail(emailController.text);
     response.when(success: (checkEmailResponse) {

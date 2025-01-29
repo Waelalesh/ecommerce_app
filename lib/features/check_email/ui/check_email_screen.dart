@@ -33,34 +33,38 @@ class CheckEmailScreen extends StatelessWidget {
                     /// Email Field
                     FadeInUp(
                       duration: const Duration(milliseconds: 1700),
-                      child: Container(
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.white,
-                            border: Border.all(
-                                color: ColorsManager.mutedPastelPurple),
-                            boxShadow: const [
-                              BoxShadow(
-                                color: ColorsManager.paleMauve,
-                                blurRadius: 20,
-                                offset: Offset(0, 10),
-                              )
-                            ]),
-                        child: AppTextFormField(
-                          suffixIcon: const Icon(Icons.mail_outline),
-                          validator: (value) {
-                            if (value.isNullOrEmpty() ||
-                                !AppRegex.isEmailValid(value!)) {
-                              return "Please Enter a Valid Email.";
-                            }
-                            return null;
-                          },
-                          isLast: false,
-                          controller: TextEditingController(),
-                          type: TextFormFieldType.emailOrNormal,
-                          hintText: "E-mail",
-                          hintStyle:
-                              TextStyles.font15DoveGrayMediumPlayfairDisplay,
+                      child: Form(
+                        key: context.read<CheckEmailCubit>().formKey,
+                        child: Container(
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: Colors.white,
+                              border: Border.all(
+                                  color: ColorsManager.mutedPastelPurple),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: ColorsManager.paleMauve,
+                                  blurRadius: 20,
+                                  offset: Offset(0, 10),
+                                )
+                              ]),
+                          child: AppTextFormField(
+                            suffixIcon: const Icon(Icons.mail_outline),
+                            validator: (value) {
+                              if (value.isNullOrEmpty() ||
+                                  !AppRegex.isEmailValid(value!)) {
+                                return "Please Enter a Valid Email.";
+                              }
+                              return null;
+                            },
+                            isLast: false,
+                            controller:
+                                context.read<CheckEmailCubit>().emailController,
+                            type: TextFormFieldType.emailOrNormal,
+                            hintText: "E-mail",
+                            hintStyle:
+                                TextStyles.font15DoveGrayMediumPlayfairDisplay,
+                          ),
                         ),
                       ),
                     ),
@@ -99,5 +103,11 @@ class CheckEmailScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void validateThenDoCheckEmail(BuildContext context) {
+    if (context.read<CheckEmailCubit>().formKey.currentState!.validate()) {
+      context.read<CheckEmailCubit>().emitCheckEmailStates();
+    }
   }
 }

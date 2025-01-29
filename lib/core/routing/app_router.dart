@@ -1,4 +1,4 @@
-
+import 'package:ecommerce_app/features/otp/logic/otp_cubit.dart';
 import 'package:ecommerce_app/imports.dart';
 
 class AppRouter {
@@ -40,7 +40,10 @@ class AppRouter {
         return PageTransition(
           duration: const Duration(milliseconds: 1000),
           reverseDuration: const Duration(milliseconds: 1000),
-          child: const OtpScreen(),
+          child: BlocProvider(
+            create: (context) => getIt<OtpCubit>(),
+            child: const OtpScreen(),
+          ),
           settings: settings,
           type: PageTransitionType.rightToLeft,
         );

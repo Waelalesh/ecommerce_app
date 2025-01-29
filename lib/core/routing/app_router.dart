@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/features/otp/logic/otp_cubit.dart';
+import 'package:ecommerce_app/features/reset_password/logic/reset_password_cubit.dart';
 import 'package:ecommerce_app/imports.dart';
 
 class AppRouter {
@@ -50,7 +51,10 @@ class AppRouter {
       case Routes.resetPasswordScreen:
         return PageTransition(
           alignment: Alignment.center,
-          child: const ResetPasswordScreen(),
+          child: BlocProvider(
+            create: (context) => getIt<ResetPasswordCubit>(),
+            child: const ResetPasswordScreen(),
+          ),
           duration: const Duration(milliseconds: 1000),
           reverseDuration: const Duration(milliseconds: 1000),
           settings: settings,

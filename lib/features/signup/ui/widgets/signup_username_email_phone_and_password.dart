@@ -57,9 +57,10 @@ class SignupUsernameEmailPhoneAndPassword extends StatelessWidget {
 
                 /// Phone Number Field
                 AppTextFormField(
+                    phoneController:
+                        context.read<SignupCubit>().phoneController,
                     suffixIcon: const Icon(Icons.call_outlined),
                     isLast: false,
-                    controller: context.read<SignupCubit>().phoneController,
                     type: TextFormFieldType.phoneNumber,
                     hintStyle: TextStyles.font15DoveGrayMediumPlayfairDisplay),
 

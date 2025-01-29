@@ -1,10 +1,4 @@
-import 'package:ecommerce_app/features/signup/data/models/sign_up_request_body.dart';
-import 'package:ecommerce_app/features/signup/data/repos/sign_up_repo.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
- 
-import 'sign_up_state.dart';
+import 'package:ecommerce_app/imports.dart';
 
 class SignupCubit extends Cubit<SignupState> {
   final SignupRepo _signupRepo;
@@ -12,7 +6,8 @@ class SignupCubit extends Cubit<SignupState> {
 
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
-  TextEditingController phoneController = TextEditingController();
+  PhoneController phoneController = PhoneController(
+      initialValue: const PhoneNumber(isoCode: IsoCode.SY, nsn: ""));
   TextEditingController passwordController = TextEditingController();
   TextEditingController passwordConfirmationController =
       TextEditingController();
@@ -24,7 +19,8 @@ class SignupCubit extends Cubit<SignupState> {
       SignupRequestBody(
         name: nameController.text,
         email: emailController.text,
-        phone: phoneController.text,
+        phone:
+            "+${phoneController.value.countryCode} + ${phoneController.value.nsn}",
         password: passwordController.text,
         passwordConfirmation: passwordConfirmationController.text,
       ),

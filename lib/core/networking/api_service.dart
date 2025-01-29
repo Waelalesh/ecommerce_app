@@ -1,5 +1,6 @@
 import 'package:ecommerce_app/features/check_email/data/models/check_email_response.dart';
 import 'package:ecommerce_app/features/otp/data/models/otp_response.dart';
+ import 'package:ecommerce_app/features/reset_password/data/models/reset_password_response.dart';
 import 'package:ecommerce_app/imports.dart';
 import 'package:retrofit/retrofit.dart';
 part 'api_service.g.dart';
@@ -12,8 +13,10 @@ abstract class ApiService {
   Future<LoginResponse> login(@Body() LoginRequestBody loginRequestBody);
   @POST(ApiConstants.signup)
   Future<SignupResponse> signup(@Body() SignupRequestBody signupRequestBody);
-  @POST(ApiConstants.signup)
+  @POST(ApiConstants.checkEamil)
   Future<CheckEmailResponse> checkEmail(@Body() String email);
   @POST(ApiConstants.verificationCode)
   Future<OtpResponse> verifyCode(@Body() String number);
+  @POST(ApiConstants.resetPassword)
+  Future<ResetPasswordResponse> resetPassword(@Body() String password);
 }

@@ -1,4 +1,3 @@
-import 'package:ecommerce_app/features/check_email/logic/check_email_cubit.dart';
 import 'package:ecommerce_app/imports.dart';
 
 class CheckEmailBlocListner extends StatelessWidget {
@@ -25,7 +24,7 @@ class CheckEmailBlocListner extends StatelessWidget {
             showSuccessSnackbar(context,
                 title: "Check E-mail Success",
                 message: checkEmailResponse.message ?? "Error To Get Message");
-            context.pushNamed(Routes.otpScreen,
+            context.pushReplacementNamed(Routes.otpScreen,
                 arguments: Routes.checkEmailScreen);
           },
           checkEmailError: (apiErrorModel) {

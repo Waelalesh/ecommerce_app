@@ -24,10 +24,9 @@ class LoginBlocListner extends StatelessWidget {
             showSuccessSnackbar(context,
                 title: "Login Success",
                 message: loginResponse.message ?? "Error To Get Message");
-            context.pushNamed(Routes.mainLayoutScreen);
+            context.pushReplacementNamed(Routes.mainLayoutScreen);
           },
           loginError: (apiErrorModel) {
-            // setupErrorState(context, apiErrorModel);
             showErrorSnackbar(context,
                 title: "Login Error",
                 message: apiErrorModel.getAllErrorMessages());
@@ -36,33 +35,5 @@ class LoginBlocListner extends StatelessWidget {
       },
       child: const SizedBox.shrink(),
     );
-  }
-
-  void setupErrorState(BuildContext context, ApiErrorModel apiErrorModel) {
-    context.pop();
-    showDialog(
-        context: context,
-        builder: (builder) => AlertDialog(
-              icon: const Icon(
-                Icons.error,
-                color: Colors.red,
-                size: 32,
-              ),
-              content: Text(
-                apiErrorModel.getAllErrorMessages(),
-                style: TextStyles.font13LightPurpleMediumPlayfairDisplay,
-              ),
-              actions: [
-                TextButton(
-                    onPressed: () {
-                      context.pop();
-                    },
-                    child: Text(
-                      "Got it",
-                      style: TextStyles
-                          .font13SemiTransparentDarkPurpleSemiBoldPlayfairDisplay,
-                    ))
-              ],
-            ));
   }
 }

@@ -51,23 +51,23 @@ class OtpScreen extends StatelessWidget {
                                   child: Assets.lottieAnimation.loadingRocket
                                       .lottie()));
                           await Future.delayed(const Duration(seconds: 8));
-                          // context.pop();
-                          // showSuccessSnackbar(context,
-                          //     message: "Verification Successful",
-                          //     title: "Success");
-                          // Future.delayed(const Duration(seconds: 4))
-                          //     .then((onValue) {
-                          //   /// Here we Check if the argument we passed in prvious screen is a [sign up] route to navigate to [login screen] to login
-                          //   /// if not we navigate to [reset password screen]
-                          //   if (ModalRoute.of(context)!.settings.arguments ==
-                          //       Routes.signUpScreen) {
-                          //     context.pushNamedAndRemoveUntil(
-                          //         Routes.logInScreen,
-                          //         predicate: (predicate) => false);
-                          //   } else {
-                          //     context.pushNamed(Routes.resetPasswordScreen);
-                          //   }
-                          // });
+                          context.pop();
+                          showSuccessSnackbar(context,
+                              message: "Verification Successful",
+                              title: "Success");
+                          Future.delayed(const Duration(seconds: 4))
+                              .then((onValue) {
+                            /// Here we Check if the argument we passed in prvious screen is a [sign up] route to navigate to [login screen] to login
+                            /// if not we navigate to [reset password screen]
+                            if (ModalRoute.of(context)!.settings.arguments ==
+                                Routes.signUpScreen) {
+                              context.pushNamedAndRemoveUntil(
+                                  Routes.logInScreen,
+                                  predicate: (predicate) => false);
+                            } else {
+                              context.pushNamed(Routes.resetPasswordScreen);
+                            }
+                          });
                         },
                         // fieldHeight: 100.h,
                         borderColor: ColorsManager.normalPurple,

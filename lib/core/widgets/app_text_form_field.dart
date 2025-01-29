@@ -1,20 +1,21 @@
 import 'package:ecommerce_app/imports.dart';
 
 class AppTextFormField extends StatefulWidget {
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final String? Function(String?)? validator;
   final TextFormFieldType type;
   final String? hintText;
   final TextStyle? hintStyle;
   final Color? backgroundColor;
   final Widget? prefixIcon;
+  final PhoneController? phoneController;
 
   /// for check if last field to delete last border line
   final bool isLast;
   final Widget? suffixIcon;
   const AppTextFormField({
     super.key,
-    required this.controller,
+      this.controller,
     this.validator,
     required this.type,
     this.hintText,
@@ -25,6 +26,7 @@ class AppTextFormField extends StatefulWidget {
     required this.isLast,
     this.suffixIcon,
     this.prefixIcon,
+    this.phoneController,
   });
 
   @override
@@ -44,11 +46,12 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
                   Border(bottom: BorderSide(color: ColorsManager.paleMauve))),
       child: widget.type == TextFormFieldType.phoneNumber
           ? PhoneFormField(
+              controller: widget.phoneController,
               decoration: InputDecoration(
                 suffixIcon: widget.suffixIcon,
                 border: InputBorder.none,
               ),
-              initialValue: PhoneNumber.parse('+963'), // or use the controller
+              // initialValue: PhoneNumber.parse('+963'), // or use the controller
               validator: PhoneValidator.compose([
                 PhoneValidator.required(context),
                 PhoneValidator.validMobile(context)

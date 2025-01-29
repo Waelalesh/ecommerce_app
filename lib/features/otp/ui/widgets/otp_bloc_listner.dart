@@ -32,7 +32,7 @@ class OtpBlocListner extends StatelessWidget {
               context.pushNamedAndRemoveUntil(Routes.logInScreen,
                   predicate: (predicate) => false);
             } else {
-              context.pushNamed(Routes.resetPasswordScreen);
+              context.pushReplacementNamed(Routes.resetPasswordScreen);
             }
           },
           otpError: (apiErrorModel) {

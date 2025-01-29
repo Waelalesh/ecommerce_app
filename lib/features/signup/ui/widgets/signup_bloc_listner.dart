@@ -24,7 +24,11 @@ class SignupBlocListener extends StatelessWidget {
             showSuccessSnackbar(context,
                 title: "Signup Success",
                 message: signupResponse.message ?? "Error To Get Message");
-            context.pushNamed(Routes.otpScreen);
+
+            /// to check in the next screen if navigate to [login] screen or [change password] screen
+            /// we passed the argument as a route name to check it
+            context.pushReplacementNamed(Routes.otpScreen,
+                arguments: Routes.signUpScreen);
           },
           signupError: (apiErrorModel) {
             showErrorSnackbar(context,

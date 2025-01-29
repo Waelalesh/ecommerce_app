@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/core/widgets/main_layout.dart';
+
 import 'package:ecommerce_app/imports.dart';
 
 class AppRouter {
@@ -29,7 +29,10 @@ class AppRouter {
           alignment: Alignment.center,
           duration: const Duration(milliseconds: 1000),
           reverseDuration: const Duration(milliseconds: 1000),
-          child: const CheckEmailScreen(),
+          child: BlocProvider(
+            create: (context) => getIt<CheckEmailCubit>(),
+            child: const CheckEmailScreen(),
+          ),
           settings: settings,
           type: PageTransitionType.topToBottom,
         );
@@ -52,7 +55,7 @@ class AppRouter {
         );
       case Routes.mainLayoutScreen:
         return PageTransition(
-          child: const MainLayout(),
+          child: const MainScreenNavigationBar(),
           duration: const Duration(milliseconds: 1000),
           reverseDuration: const Duration(milliseconds: 1000),
           settings: settings,

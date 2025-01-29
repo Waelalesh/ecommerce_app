@@ -36,8 +36,10 @@ class OtpScreen extends StatelessWidget {
                       child: OtpTextField(
                         keyboardType: TextInputType.number,
                         onSubmit: (value) {
+                          /// Here we Check if the argument we passed in prvious screen is a [sign up] route to navigate to [login screen] to login
+                          /// if not we navigate to [reset password screen]
                           if (ModalRoute.of(context)!.settings.arguments ==
-                              Constants.signup) {
+                              Routes.signUpScreen) {
                             context.pushNamedAndRemoveUntil(Routes.logInScreen,
                                 predicate: (predicate) => false);
                           } else {

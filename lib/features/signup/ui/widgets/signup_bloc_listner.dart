@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/features/otp/data/models/argument_otp_model.dart';
 import 'package:ecommerce_app/imports.dart';
 
 class SignupBlocListener extends StatelessWidget {
@@ -18,19 +19,24 @@ class SignupBlocListener extends StatelessWidget {
                 builder: (builder) => Center(
                     child: Assets.lottieAnimation.loadingTelegram.lottie()));
           },
-          signupSuccess: (signupResponse) {
+          signupSuccess: (signupResponse) async {
             context.pop();
-            Future.delayed(const Duration(seconds: 3));
             showSuccessSnackbar(context,
                 title: "Signup Success",
                 message: signupResponse.message ?? "Error To Get Message");
 
             /// to check in the next screen if navigate to [login] screen or [change password] screen
             /// we passed the argument as a route name to check it
-            context.pushReplacementNamed(Routes.otpScreen,
-                arguments: Routes.signUpScreen);
+            await Future.delayed(const Duration(seconds: 4));
+            if (context.mounted) {
+              context.pushReplacementNamed(Routes.otpScreen,
+                  arguments: ArgumentOtpModel<SignupRequestBody>(
+                      data: context.read<SignupCubit>().signupRequestBody,
+                      routeName: Routes.signUpScreen));
+            }
           },
           signupError: (apiErrorModel) {
+            context.pop();
             showErrorSnackbar(context,
                 title: "Signup Error",
                 message: apiErrorModel.getAllErrorMessages());

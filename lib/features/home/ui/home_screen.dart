@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/imports.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,7 +8,9 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsManager.lighterGray,
-      appBar: const StoreAppBar(),
+      appBar: StoreAppBar(
+        onTap: () => ZoomDrawer.of(context)!.toggle(),
+      ),
       body: SafeArea(
         bottom: true,
         child: ListView(

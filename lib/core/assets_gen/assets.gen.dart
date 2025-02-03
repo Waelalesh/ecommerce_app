@@ -24,11 +24,16 @@ class $AssetsImagesGen {
   AssetGenImage get background =>
       const AssetGenImage('assets/images/background.png');
 
+  /// File path: assets/images/engineer.jpg
+  AssetGenImage get engineer =>
+      const AssetGenImage('assets/images/engineer.jpg');
+
   /// File path: assets/images/product.png
   AssetGenImage get product => const AssetGenImage('assets/images/product.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [background2, background, product];
+  List<AssetGenImage> get values =>
+      [background2, background, engineer, product];
 }
 
 class $AssetsLottieAnimationGen {
@@ -84,6 +89,10 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/home_icon.svg
   SvgGenImage get homeIcon => const SvgGenImage('assets/svgs/home_icon.svg');
 
+  /// File path: assets/svgs/home_icon_menu.svg
+  SvgGenImage get homeIconMenu =>
+      const SvgGenImage('assets/svgs/home_icon_menu.svg');
+
   /// File path: assets/svgs/menu_icon.svg
   SvgGenImage get menuIcon => const SvgGenImage('assets/svgs/menu_icon.svg');
 
@@ -93,6 +102,13 @@ class $AssetsSvgsGen {
   /// File path: assets/svgs/notification_icon.svg
   SvgGenImage get notificationIcon =>
       const SvgGenImage('assets/svgs/notification_icon.svg');
+
+  /// File path: assets/svgs/notification_menu_icon.svg
+  SvgGenImage get notificationMenuIcon =>
+      const SvgGenImage('assets/svgs/notification_menu_icon.svg');
+
+  /// File path: assets/svgs/order_icon.svg
+  SvgGenImage get orderIcon => const SvgGenImage('assets/svgs/order_icon.svg');
 
   /// File path: assets/svgs/puma_logo.svg
   SvgGenImage get pumaLogo => const SvgGenImage('assets/svgs/puma_logo.svg');
@@ -106,6 +122,14 @@ class $AssetsSvgsGen {
 
   /// File path: assets/svgs/shop_icon.svg
   SvgGenImage get shopIcon => const SvgGenImage('assets/svgs/shop_icon.svg');
+
+  /// File path: assets/svgs/shop_icon_menu.svg
+  SvgGenImage get shopIconMenu =>
+      const SvgGenImage('assets/svgs/shop_icon_menu.svg');
+
+  /// File path: assets/svgs/sign_out_icon.svg
+  SvgGenImage get signOutIcon =>
+      const SvgGenImage('assets/svgs/sign_out_icon.svg');
 
   /// File path: assets/svgs/under_armour_logo.svg
   SvgGenImage get underArmourLogo =>
@@ -121,13 +145,18 @@ class $AssetsSvgsGen {
         conversLogo,
         favorite,
         homeIcon,
+        homeIconMenu,
         menuIcon,
         nikeLogo,
         notificationIcon,
+        notificationMenuIcon,
+        orderIcon,
         pumaLogo,
         searchIcon,
         shop,
         shopIcon,
+        shopIconMenu,
+        signOutIcon,
         underArmourLogo,
         user
       ];

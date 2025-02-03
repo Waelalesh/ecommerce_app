@@ -84,6 +84,10 @@ class SignupUsernameEmailPhoneAndPassword extends StatelessWidget {
                       if (!AppRegex.hasMinLength(value!)) {
                         return "Password must be at least 8 characters long.";
                       }
+                      if (value !=
+                          context.read<SignupCubit>().passwordController.text) {
+                        return "The Password Or Confirm Password is incorrect";
+                      }
                       return null;
                     },
                     isLast: true,

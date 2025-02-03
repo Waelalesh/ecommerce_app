@@ -15,7 +15,7 @@ class AppTextFormField extends StatefulWidget {
   final Widget? suffixIcon;
   const AppTextFormField({
     super.key,
-      this.controller,
+    this.controller,
     this.validator,
     required this.type,
     this.hintText,
@@ -35,6 +35,9 @@ class AppTextFormField extends StatefulWidget {
 
 class _AppTextFormFieldState extends State<AppTextFormField> {
   bool obscureText = false;
+
+  /// I put this variabel beacause the screen after show dialog show keyboard.
+  bool focus = true;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,8 +49,25 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
                   Border(bottom: BorderSide(color: ColorsManager.paleMauve))),
       child: widget.type == TextFormFieldType.phoneNumber
           ? PhoneFormField(
+              onTap: () {
+                setState(() {
+                  focus = true;
+                });
+              },
+              canRequestFocus: focus,
+              onTapOutside: (event) {
+                print(event);
+                setState(() {
+                  focus = false;
+                });
+              },
+              style: widget.hintStyle ??
+                  TextStyles.font15DoveGrayMediumPlayfairDisplay,
+              textInputAction: TextInputAction.next,
               controller: widget.phoneController,
               decoration: InputDecoration(
+                hintStyle: widget.hintStyle ??
+                    TextStyles.font15DoveGrayMediumPlayfairDisplay,
                 suffixIcon: widget.suffixIcon,
                 border: InputBorder.none,
               ),
@@ -70,6 +90,19 @@ class _AppTextFormFieldState extends State<AppTextFormField> {
                   flagSize: 0),
             )
           : TextFormField(
+              onTap: () {
+                setState(() {
+                  focus = true;
+                });
+              },
+              canRequestFocus: focus,
+              onTapOutside: (event) {
+                print(event);
+                setState(() {
+                  focus = false;
+                });
+              },
+              textInputAction: TextInputAction.next,
               obscureText: widget.type == TextFormFieldType.password
                   ? !obscureText
                   : false,

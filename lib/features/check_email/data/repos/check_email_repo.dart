@@ -6,7 +6,8 @@ class CheckEmailRepo {
 
   CheckEmailRepo(this._apiService);
 
-  Future<ApiResault<CheckEmailResponse>> checkEmail(String email) async {
+  Future<ApiResault<CheckEmailResponse>> checkEmail(
+      Map<String, dynamic> email) async {
     try {
       final response = await _apiService.checkEmail(email);
       return ApiResault.success(response);

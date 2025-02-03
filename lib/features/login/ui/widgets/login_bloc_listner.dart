@@ -18,15 +18,18 @@ class LoginBlocListner extends StatelessWidget {
                 builder: (builder) => Center(
                     child: Assets.lottieAnimation.loadingCircle.lottie()));
           },
-          loginSuccess: (loginResponse) {
+          loginSuccess: (loginResponse) async {
             context.pop();
-            Future.delayed(const Duration(seconds: 3));
             showSuccessSnackbar(context,
                 title: "Login Success",
                 message: loginResponse.message ?? "Error To Get Message");
-            context.pushReplacementNamed(Routes.mainLayoutScreen);
+            await Future.delayed(const Duration(seconds: 3));
+            if (context.mounted) {
+              context.pushReplacementNamed(Routes.mainLayoutScreen);
+            }
           },
           loginError: (apiErrorModel) {
+            context.pop();
             showErrorSnackbar(context,
                 title: "Login Error",
                 message: apiErrorModel.getAllErrorMessages());

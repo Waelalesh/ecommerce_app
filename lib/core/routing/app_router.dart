@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/features/main_screen_navigation_bar/main_menu_drawer_screen.dart';
 import 'package:ecommerce_app/features/otp/logic/otp_cubit.dart';
 import 'package:ecommerce_app/features/reset_password/logic/reset_password_cubit.dart';
 import 'package:ecommerce_app/imports.dart';
@@ -62,7 +63,7 @@ class AppRouter {
         );
       case Routes.mainLayoutScreen:
         return PageTransition(
-          child: const MainScreenNavigationBar(),
+          child: MainMenuDrawerScreen(),
           duration: const Duration(milliseconds: 1000),
           reverseDuration: const Duration(milliseconds: 1000),
           settings: settings,

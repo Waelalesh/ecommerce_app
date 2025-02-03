@@ -14,7 +14,7 @@ class _ApiService implements ApiService {
     this.baseUrl,
     this.errorLogger,
   }) {
-    baseUrl ??= 'https://vcare.integration25.com/api/';
+    baseUrl ??= 'http://192.168.207.159:8000/api/';
   }
 
   final Dio _dio;
@@ -71,7 +71,7 @@ class _ApiService implements ApiService {
     )
         .compose(
           _dio.options,
-          'signup',
+          'register',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -92,11 +92,12 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<CheckEmailResponse> checkEmail(String email) async {
+  Future<CheckEmailResponse> checkEmail(Map<String, dynamic> email) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = email;
+    final _data = <String, dynamic>{};
+    _data.addAll(email);
     final _options = _setStreamType<CheckEmailResponse>(Options(
       method: 'POST',
       headers: _headers,
@@ -104,7 +105,7 @@ class _ApiService implements ApiService {
     )
         .compose(
           _dio.options,
-          'check-email',
+          'check_email',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -125,11 +126,13 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<OtpResponse> verifyCode(String number) async {
+  Future<OtpResponse> verifyCodeForRegister(
+      OtpRequestBodyForSignUp otpRequestBody) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = number;
+    final _data = <String, dynamic>{};
+    _data.addAll(otpRequestBody.toJson());
     final _options = _setStreamType<OtpResponse>(Options(
       method: 'POST',
       headers: _headers,
@@ -137,7 +140,7 @@ class _ApiService implements ApiService {
     )
         .compose(
           _dio.options,
-          'verificationCode',
+          'verifyOtpForRegeister',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -158,11 +161,48 @@ class _ApiService implements ApiService {
   }
 
   @override
-  Future<ResetPasswordResponse> resetPassword(String password) async {
+  Future<OtpResponse> verifyCodeForResetPassword(
+      Map<String, dynamic> data) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = password;
+    final _data = <String, dynamic>{};
+    _data.addAll(data);
+    final _options = _setStreamType<OtpResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          'verifyOtp',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late OtpResponse _value;
+    try {
+      _value = OtpResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<ResetPasswordResponse> resetPassword(
+      ResetPasswordRequestBody body) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
     final _options = _setStreamType<ResetPasswordResponse>(Options(
       method: 'POST',
       headers: _headers,
@@ -170,7 +210,7 @@ class _ApiService implements ApiService {
     )
         .compose(
           _dio.options,
-          'reset-password',
+          'updatePassword',
           queryParameters: queryParameters,
           data: _data,
         )

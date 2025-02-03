@@ -5,8 +5,9 @@ part 'otp_response.g.dart';
 class OtpResponse {
   String? message;
   bool? status;
+  String? email;
 
-  OtpResponse({this.message, this.status});
+  OtpResponse({this.message, this.status, this.email});
 
   factory OtpResponse.fromJson(Map<String, dynamic> json) =>
       _$OtpResponseFromJson(json);

@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/features/otp/data/models/argument_otp_model.dart';
 import 'package:ecommerce_app/imports.dart';
 
 class CheckEmailBlocListner extends StatelessWidget {
@@ -18,16 +19,21 @@ class CheckEmailBlocListner extends StatelessWidget {
                 builder: (builder) => Center(
                     child: Assets.lottieAnimation.loaidngColors.lottie()));
           },
-          checkEmailSuccess: (checkEmailResponse) {
+          checkEmailSuccess: (checkEmailResponse) async {
             context.pop();
-            Future.delayed(const Duration(seconds: 3));
             showSuccessSnackbar(context,
                 title: "Check E-mail Success",
                 message: checkEmailResponse.message ?? "Error To Get Message");
-            context.pushReplacementNamed(Routes.otpScreen,
-                arguments: Routes.checkEmailScreen);
+            await Future.delayed(const Duration(seconds: 3));
+            if (context.mounted) {
+              context.pushReplacementNamed(Routes.otpScreen,
+                  arguments: ArgumentOtpModel<String>(
+                      data: checkEmailResponse.email,
+                      routeName: Routes.checkEmailScreen));
+            }
           },
           checkEmailError: (apiErrorModel) {
+            context.pop();
             showErrorSnackbar(context,
                 title: "Check E-mail Error",
                 message: apiErrorModel.getAllErrorMessages());

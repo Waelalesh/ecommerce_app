@@ -20,16 +20,20 @@ class ResetPasswordBlocListner extends StatelessWidget {
                 builder: (builder) => Center(
                     child: Assets.lottieAnimation.loadingTelegraph.lottie()));
           },
-          resetPasswordSuccess: (resetPasswordResponse) {
+          resetPasswordSuccess: (resetPasswordResponse) async {
             context.pop();
-            Future.delayed(const Duration(seconds: 3));
+
             showSuccessSnackbar(context,
                 title: "Reset Password Success",
                 message:
                     resetPasswordResponse.message ?? "Error To Get Message");
-            context.pushReplacementNamed(Routes.logInScreen);
+            await Future.delayed(const Duration(seconds: 3));
+            if (context.mounted) {
+              context.pushReplacementNamed(Routes.logInScreen);
+            }
           },
           resetPasswordError: (apiErrorModel) {
+            context.pop();
             showErrorSnackbar(context,
                 title: "ResetPassword Error",
                 message: apiErrorModel.getAllErrorMessages());

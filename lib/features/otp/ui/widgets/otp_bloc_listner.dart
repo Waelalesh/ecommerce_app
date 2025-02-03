@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/features/otp/data/models/argument_otp_model.dart';
 import 'package:ecommerce_app/features/otp/logic/otp_cubit.dart';
 import 'package:ecommerce_app/features/otp/logic/otp_state.dart';
 import 'package:ecommerce_app/imports.dart';
@@ -18,24 +19,33 @@ class OtpBlocListner extends StatelessWidget {
                 builder: (builder) => Center(
                     child: Assets.lottieAnimation.loadingRocket.lottie()));
           },
-          otpSuccess: (otpResponse) {
+          otpSuccess: (otpResponse) async {
             context.pop();
-            Future.delayed(const Duration(seconds: 3));
             showSuccessSnackbar(context,
                 title: "Verification Success",
                 message: otpResponse.message ?? "Error To Get Message");
 
             /// Here we Check if the argument we passed in prvious screen is a [sign up] route to navigate to [login screen] to login
             /// if not we navigate to [reset password screen]
-            if (ModalRoute.of(context)!.settings.arguments ==
-                Routes.signUpScreen) {
-              context.pushNamedAndRemoveUntil(Routes.logInScreen,
-                  predicate: (predicate) => false);
-            } else {
-              context.pushReplacementNamed(Routes.resetPasswordScreen);
+            await Future.delayed(const Duration(seconds: 3));
+            if (context.mounted) {
+              final ArgumentOtpModel argumentOtpModel = ModalRoute.of(context)!
+                  .settings
+                  .arguments as ArgumentOtpModel;
+              if (argumentOtpModel.routeName == Routes.signUpScreen) {
+                context.pushNamedAndRemoveUntil(Routes.logInScreen,
+                    predicate: (predicate) => false);
+              } else {
+                ArgumentOtpModel<String> data = ModalRoute.of(context)!
+                    .settings
+                    .arguments as ArgumentOtpModel<String>;
+                context.pushReplacementNamed(Routes.resetPasswordScreen,
+                    arguments: data.data ?? "Email Empty");
+              }
             }
           },
           otpError: (apiErrorModel) {
+            context.pop();
             showErrorSnackbar(context,
                 title: "Verification Error",
                 message: apiErrorModel.getAllErrorMessages());

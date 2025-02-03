@@ -11,7 +11,7 @@ class CheckEmailCubit extends Cubit<CheckEmailState> {
 
   void emitCheckEmailStates() async {
     emit(const CheckEmailState.checkEmailLoading());
-    final response = await _checkEmailRepo.checkEmail(emailController.text);
+    final response = await _checkEmailRepo.checkEmail({"email" :emailController.text});
     response.when(success: (checkEmailResponse) {
       emit(CheckEmailState.checkEmailSuccess(checkEmailResponse));
     }, failure: (apiErrorModel) {

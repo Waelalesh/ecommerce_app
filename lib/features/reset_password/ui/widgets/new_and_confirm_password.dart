@@ -34,8 +34,7 @@ class NewAndConfirmPassword extends StatelessWidget {
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your new password';
-                    }
-                    if (!AppRegex.isPasswordValid(value)) {
+                    } else if (!AppRegex.hasMinLength(value)) {
                       return 'Password must be at least 8 characters with letters and numbers';
                     }
                     return null;

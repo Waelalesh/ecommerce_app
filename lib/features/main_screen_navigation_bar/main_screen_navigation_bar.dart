@@ -1,5 +1,7 @@
 // ignore_for_file: deprecated_member_use_from_same_package
 
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+
 import '../../imports.dart';
 
 class MainScreenNavigationBar extends StatefulWidget {
@@ -49,7 +51,9 @@ class MainScreenNavigationBarState extends State<MainScreenNavigationBar> {
                             padding: WidgetStatePropertyAll(EdgeInsets.all(17)),
                             backgroundColor:
                                 WidgetStatePropertyAll(ColorsManager.mainBlue)),
-                        onPressed: () {},
+                        onPressed: () {
+                         ZoomDrawer.of(context)!.toggle();
+                        },
                         icon: Assets.svgs.shopIcon
                             .svg(height: 25.h, width: 24.w)),
                   ),

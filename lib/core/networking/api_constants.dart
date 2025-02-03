@@ -1,11 +1,13 @@
 class ApiConstants {
-  static const String baseUrl = "https://vcare.integration25.com/api/";
+  static const String ip = "192.168.207.159:8000"; 
+  static const String baseUrl = "http://$ip/api/"; 
 
   static const String login = "login";
-  static const String signup = "signup";
-  static const String checkEamil = "check-email";
-  static const String resetPassword = "reset-password";
-  static const String verificationCode = "verificationCode";
+  static const String signup = "register";
+  static const String checkEamil = "check_email";
+  static const String resetPassword = "updatePassword";
+  static const String verificationCodeForResetPassword = "verifyOtp";
+  static const String verificationCodeForRegister = "verifyOtpForRegeister";
 }
 
 class ApiErrors {

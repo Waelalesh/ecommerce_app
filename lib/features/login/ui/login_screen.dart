@@ -41,23 +41,8 @@ class LoginScreen extends StatelessWidget {
                       verticalSpace(20),
                       AnimatedAppButton(
                           milliSecondsDuration: 1900,
-                          onPressed: () async {
-                            showDialog(
-                                context: context,
-                                builder: (builder) => Center(
-                                    child: Assets.lottieAnimation.loadingCircle
-                                        .lottie()));
-                            await Future.delayed(const Duration(seconds: 4));
-                            context.pop();
-                            showSuccessSnackbar(context,
-                                message: "Login successful", title: "Success");
-
-                            Future.delayed(const Duration(seconds: 4))
-                                .then((onValue) {
-                              context.pushNamed(
-                                Routes.mainLayoutScreen,
-                              );
-                            });
+                          onPressed: ()   {
+                            validateThenDoLogin(context);
                           },
                           color: ColorsManager.eggplantPurple,
                           height: 48,

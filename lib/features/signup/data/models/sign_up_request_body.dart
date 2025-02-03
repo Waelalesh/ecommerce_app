@@ -1,22 +1,23 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'sign_up_request_body.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(fieldRename: FieldRename.snake)
 class SignupRequestBody {
-  final String name;
-  final String email;
-  final String phone;
-  final String password;
-  @JsonKey(name: 'password_confirmation')
-  final String passwordConfirmation;
+  final String? name;
+  final String? email;
+  final String? phoneNumber;
+  final String? password;
+  final String? confirmPassword;
 
   SignupRequestBody({
-    required this.name,
-    required this.email,
-    required this.phone,
-    required this.password,
-    required this.passwordConfirmation,
+    this.phoneNumber,
+    this.confirmPassword,
+    this.name,
+    this.email,
+    this.password,
   });
 
   Map<String, dynamic> toJson() => _$SignupRequestBodyToJson(this);
+  factory SignupRequestBody.fromJson(Map<String, dynamic> json) =>
+      _$SignupRequestBodyFromJson(json);
 }

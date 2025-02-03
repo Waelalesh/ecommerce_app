@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$OtpState {
+mixin _$OtpState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -43,40 +43,41 @@ mixin _$OtpState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(OtpLoading value) otpLoading,
-    required TResult Function(OtpSuccess value) otpSuccess,
-    required TResult Function(OtpError value) otpError,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(OtpLoading<T> value) otpLoading,
+    required TResult Function(OtpSuccess<T> value) otpSuccess,
+    required TResult Function(OtpError<T> value) otpError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(OtpLoading value)? otpLoading,
-    TResult? Function(OtpSuccess value)? otpSuccess,
-    TResult? Function(OtpError value)? otpError,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(OtpLoading<T> value)? otpLoading,
+    TResult? Function(OtpSuccess<T> value)? otpSuccess,
+    TResult? Function(OtpError<T> value)? otpError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(OtpLoading value)? otpLoading,
-    TResult Function(OtpSuccess value)? otpSuccess,
-    TResult Function(OtpError value)? otpError,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(OtpLoading<T> value)? otpLoading,
+    TResult Function(OtpSuccess<T> value)? otpSuccess,
+    TResult Function(OtpError<T> value)? otpError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $OtpStateCopyWith<$Res> {
-  factory $OtpStateCopyWith(OtpState value, $Res Function(OtpState) then) =
-      _$OtpStateCopyWithImpl<$Res, OtpState>;
+abstract class $OtpStateCopyWith<T, $Res> {
+  factory $OtpStateCopyWith(
+          OtpState<T> value, $Res Function(OtpState<T>) then) =
+      _$OtpStateCopyWithImpl<T, $Res, OtpState<T>>;
 }
 
 /// @nodoc
-class _$OtpStateCopyWithImpl<$Res, $Val extends OtpState>
-    implements $OtpStateCopyWith<$Res> {
+class _$OtpStateCopyWithImpl<T, $Res, $Val extends OtpState<T>>
+    implements $OtpStateCopyWith<T, $Res> {
   _$OtpStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -89,18 +90,18 @@ class _$OtpStateCopyWithImpl<$Res, $Val extends OtpState>
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
+abstract class _$$InitialImplCopyWith<T, $Res> {
   factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl<T> value, $Res Function(_$InitialImpl<T>) then) =
+      __$$InitialImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$OtpStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
+class __$$InitialImplCopyWithImpl<T, $Res>
+    extends _$OtpStateCopyWithImpl<T, $Res, _$InitialImpl<T>>
+    implements _$$InitialImplCopyWith<T, $Res> {
   __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      _$InitialImpl<T> _value, $Res Function(_$InitialImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of OtpState
@@ -109,18 +110,18 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
+class _$InitialImpl<T> implements _Initial<T> {
   const _$InitialImpl();
 
   @override
   String toString() {
-    return 'OtpState.initial()';
+    return 'OtpState<$T>.initial()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType && other is _$InitialImpl<T>);
   }
 
   @override
@@ -166,10 +167,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(OtpLoading value) otpLoading,
-    required TResult Function(OtpSuccess value) otpSuccess,
-    required TResult Function(OtpError value) otpError,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(OtpLoading<T> value) otpLoading,
+    required TResult Function(OtpSuccess<T> value) otpSuccess,
+    required TResult Function(OtpError<T> value) otpError,
   }) {
     return initial(this);
   }
@@ -177,10 +178,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(OtpLoading value)? otpLoading,
-    TResult? Function(OtpSuccess value)? otpSuccess,
-    TResult? Function(OtpError value)? otpError,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(OtpLoading<T> value)? otpLoading,
+    TResult? Function(OtpSuccess<T> value)? otpSuccess,
+    TResult? Function(OtpError<T> value)? otpError,
   }) {
     return initial?.call(this);
   }
@@ -188,10 +189,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(OtpLoading value)? otpLoading,
-    TResult Function(OtpSuccess value)? otpSuccess,
-    TResult Function(OtpError value)? otpError,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(OtpLoading<T> value)? otpLoading,
+    TResult Function(OtpSuccess<T> value)? otpSuccess,
+    TResult Function(OtpError<T> value)? otpError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -201,23 +202,23 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements OtpState {
-  const factory _Initial() = _$InitialImpl;
+abstract class _Initial<T> implements OtpState<T> {
+  const factory _Initial() = _$InitialImpl<T>;
 }
 
 /// @nodoc
-abstract class _$$OtpLoadingImplCopyWith<$Res> {
+abstract class _$$OtpLoadingImplCopyWith<T, $Res> {
   factory _$$OtpLoadingImplCopyWith(
-          _$OtpLoadingImpl value, $Res Function(_$OtpLoadingImpl) then) =
-      __$$OtpLoadingImplCopyWithImpl<$Res>;
+          _$OtpLoadingImpl<T> value, $Res Function(_$OtpLoadingImpl<T>) then) =
+      __$$OtpLoadingImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$OtpLoadingImplCopyWithImpl<$Res>
-    extends _$OtpStateCopyWithImpl<$Res, _$OtpLoadingImpl>
-    implements _$$OtpLoadingImplCopyWith<$Res> {
+class __$$OtpLoadingImplCopyWithImpl<T, $Res>
+    extends _$OtpStateCopyWithImpl<T, $Res, _$OtpLoadingImpl<T>>
+    implements _$$OtpLoadingImplCopyWith<T, $Res> {
   __$$OtpLoadingImplCopyWithImpl(
-      _$OtpLoadingImpl _value, $Res Function(_$OtpLoadingImpl) _then)
+      _$OtpLoadingImpl<T> _value, $Res Function(_$OtpLoadingImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of OtpState
@@ -226,18 +227,18 @@ class __$$OtpLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$OtpLoadingImpl implements OtpLoading {
+class _$OtpLoadingImpl<T> implements OtpLoading<T> {
   const _$OtpLoadingImpl();
 
   @override
   String toString() {
-    return 'OtpState.otpLoading()';
+    return 'OtpState<$T>.otpLoading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$OtpLoadingImpl);
+        (other.runtimeType == runtimeType && other is _$OtpLoadingImpl<T>);
   }
 
   @override
@@ -283,10 +284,10 @@ class _$OtpLoadingImpl implements OtpLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(OtpLoading value) otpLoading,
-    required TResult Function(OtpSuccess value) otpSuccess,
-    required TResult Function(OtpError value) otpError,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(OtpLoading<T> value) otpLoading,
+    required TResult Function(OtpSuccess<T> value) otpSuccess,
+    required TResult Function(OtpError<T> value) otpError,
   }) {
     return otpLoading(this);
   }
@@ -294,10 +295,10 @@ class _$OtpLoadingImpl implements OtpLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(OtpLoading value)? otpLoading,
-    TResult? Function(OtpSuccess value)? otpSuccess,
-    TResult? Function(OtpError value)? otpError,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(OtpLoading<T> value)? otpLoading,
+    TResult? Function(OtpSuccess<T> value)? otpSuccess,
+    TResult? Function(OtpError<T> value)? otpError,
   }) {
     return otpLoading?.call(this);
   }
@@ -305,10 +306,10 @@ class _$OtpLoadingImpl implements OtpLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(OtpLoading value)? otpLoading,
-    TResult Function(OtpSuccess value)? otpSuccess,
-    TResult Function(OtpError value)? otpError,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(OtpLoading<T> value)? otpLoading,
+    TResult Function(OtpSuccess<T> value)? otpSuccess,
+    TResult Function(OtpError<T> value)? otpError,
     required TResult orElse(),
   }) {
     if (otpLoading != null) {
@@ -318,25 +319,25 @@ class _$OtpLoadingImpl implements OtpLoading {
   }
 }
 
-abstract class OtpLoading implements OtpState {
-  const factory OtpLoading() = _$OtpLoadingImpl;
+abstract class OtpLoading<T> implements OtpState<T> {
+  const factory OtpLoading() = _$OtpLoadingImpl<T>;
 }
 
 /// @nodoc
-abstract class _$$OtpSuccessImplCopyWith<$Res> {
+abstract class _$$OtpSuccessImplCopyWith<T, $Res> {
   factory _$$OtpSuccessImplCopyWith(
-          _$OtpSuccessImpl value, $Res Function(_$OtpSuccessImpl) then) =
-      __$$OtpSuccessImplCopyWithImpl<$Res>;
+          _$OtpSuccessImpl<T> value, $Res Function(_$OtpSuccessImpl<T>) then) =
+      __$$OtpSuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({OtpResponse data});
 }
 
 /// @nodoc
-class __$$OtpSuccessImplCopyWithImpl<$Res>
-    extends _$OtpStateCopyWithImpl<$Res, _$OtpSuccessImpl>
-    implements _$$OtpSuccessImplCopyWith<$Res> {
+class __$$OtpSuccessImplCopyWithImpl<T, $Res>
+    extends _$OtpStateCopyWithImpl<T, $Res, _$OtpSuccessImpl<T>>
+    implements _$$OtpSuccessImplCopyWith<T, $Res> {
   __$$OtpSuccessImplCopyWithImpl(
-      _$OtpSuccessImpl _value, $Res Function(_$OtpSuccessImpl) _then)
+      _$OtpSuccessImpl<T> _value, $Res Function(_$OtpSuccessImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of OtpState
@@ -346,7 +347,7 @@ class __$$OtpSuccessImplCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$OtpSuccessImpl(
+    return _then(_$OtpSuccessImpl<T>(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -357,7 +358,7 @@ class __$$OtpSuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$OtpSuccessImpl implements OtpSuccess {
+class _$OtpSuccessImpl<T> implements OtpSuccess<T> {
   const _$OtpSuccessImpl(this.data);
 
   @override
@@ -365,14 +366,14 @@ class _$OtpSuccessImpl implements OtpSuccess {
 
   @override
   String toString() {
-    return 'OtpState.otpSuccess(data: $data)';
+    return 'OtpState<$T>.otpSuccess(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OtpSuccessImpl &&
+            other is _$OtpSuccessImpl<T> &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -384,8 +385,8 @@ class _$OtpSuccessImpl implements OtpSuccess {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$OtpSuccessImplCopyWith<_$OtpSuccessImpl> get copyWith =>
-      __$$OtpSuccessImplCopyWithImpl<_$OtpSuccessImpl>(this, _$identity);
+  _$$OtpSuccessImplCopyWith<T, _$OtpSuccessImpl<T>> get copyWith =>
+      __$$OtpSuccessImplCopyWithImpl<T, _$OtpSuccessImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -427,10 +428,10 @@ class _$OtpSuccessImpl implements OtpSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(OtpLoading value) otpLoading,
-    required TResult Function(OtpSuccess value) otpSuccess,
-    required TResult Function(OtpError value) otpError,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(OtpLoading<T> value) otpLoading,
+    required TResult Function(OtpSuccess<T> value) otpSuccess,
+    required TResult Function(OtpError<T> value) otpError,
   }) {
     return otpSuccess(this);
   }
@@ -438,10 +439,10 @@ class _$OtpSuccessImpl implements OtpSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(OtpLoading value)? otpLoading,
-    TResult? Function(OtpSuccess value)? otpSuccess,
-    TResult? Function(OtpError value)? otpError,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(OtpLoading<T> value)? otpLoading,
+    TResult? Function(OtpSuccess<T> value)? otpSuccess,
+    TResult? Function(OtpError<T> value)? otpError,
   }) {
     return otpSuccess?.call(this);
   }
@@ -449,10 +450,10 @@ class _$OtpSuccessImpl implements OtpSuccess {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(OtpLoading value)? otpLoading,
-    TResult Function(OtpSuccess value)? otpSuccess,
-    TResult Function(OtpError value)? otpError,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(OtpLoading<T> value)? otpLoading,
+    TResult Function(OtpSuccess<T> value)? otpSuccess,
+    TResult Function(OtpError<T> value)? otpError,
     required TResult orElse(),
   }) {
     if (otpSuccess != null) {
@@ -462,33 +463,33 @@ class _$OtpSuccessImpl implements OtpSuccess {
   }
 }
 
-abstract class OtpSuccess implements OtpState {
-  const factory OtpSuccess(final OtpResponse data) = _$OtpSuccessImpl;
+abstract class OtpSuccess<T> implements OtpState<T> {
+  const factory OtpSuccess(final OtpResponse data) = _$OtpSuccessImpl<T>;
 
   OtpResponse get data;
 
   /// Create a copy of OtpState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OtpSuccessImplCopyWith<_$OtpSuccessImpl> get copyWith =>
+  _$$OtpSuccessImplCopyWith<T, _$OtpSuccessImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$OtpErrorImplCopyWith<$Res> {
+abstract class _$$OtpErrorImplCopyWith<T, $Res> {
   factory _$$OtpErrorImplCopyWith(
-          _$OtpErrorImpl value, $Res Function(_$OtpErrorImpl) then) =
-      __$$OtpErrorImplCopyWithImpl<$Res>;
+          _$OtpErrorImpl<T> value, $Res Function(_$OtpErrorImpl<T>) then) =
+      __$$OtpErrorImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
-class __$$OtpErrorImplCopyWithImpl<$Res>
-    extends _$OtpStateCopyWithImpl<$Res, _$OtpErrorImpl>
-    implements _$$OtpErrorImplCopyWith<$Res> {
+class __$$OtpErrorImplCopyWithImpl<T, $Res>
+    extends _$OtpStateCopyWithImpl<T, $Res, _$OtpErrorImpl<T>>
+    implements _$$OtpErrorImplCopyWith<T, $Res> {
   __$$OtpErrorImplCopyWithImpl(
-      _$OtpErrorImpl _value, $Res Function(_$OtpErrorImpl) _then)
+      _$OtpErrorImpl<T> _value, $Res Function(_$OtpErrorImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of OtpState
@@ -498,7 +499,7 @@ class __$$OtpErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? apiErrorModel = null,
   }) {
-    return _then(_$OtpErrorImpl(
+    return _then(_$OtpErrorImpl<T>(
       null == apiErrorModel
           ? _value.apiErrorModel
           : apiErrorModel // ignore: cast_nullable_to_non_nullable
@@ -509,7 +510,7 @@ class __$$OtpErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$OtpErrorImpl implements OtpError {
+class _$OtpErrorImpl<T> implements OtpError<T> {
   const _$OtpErrorImpl(this.apiErrorModel);
 
   @override
@@ -517,14 +518,14 @@ class _$OtpErrorImpl implements OtpError {
 
   @override
   String toString() {
-    return 'OtpState.otpError(apiErrorModel: $apiErrorModel)';
+    return 'OtpState<$T>.otpError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$OtpErrorImpl &&
+            other is _$OtpErrorImpl<T> &&
             (identical(other.apiErrorModel, apiErrorModel) ||
                 other.apiErrorModel == apiErrorModel));
   }
@@ -537,8 +538,8 @@ class _$OtpErrorImpl implements OtpError {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$OtpErrorImplCopyWith<_$OtpErrorImpl> get copyWith =>
-      __$$OtpErrorImplCopyWithImpl<_$OtpErrorImpl>(this, _$identity);
+  _$$OtpErrorImplCopyWith<T, _$OtpErrorImpl<T>> get copyWith =>
+      __$$OtpErrorImplCopyWithImpl<T, _$OtpErrorImpl<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -580,10 +581,10 @@ class _$OtpErrorImpl implements OtpError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(OtpLoading value) otpLoading,
-    required TResult Function(OtpSuccess value) otpSuccess,
-    required TResult Function(OtpError value) otpError,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(OtpLoading<T> value) otpLoading,
+    required TResult Function(OtpSuccess<T> value) otpSuccess,
+    required TResult Function(OtpError<T> value) otpError,
   }) {
     return otpError(this);
   }
@@ -591,10 +592,10 @@ class _$OtpErrorImpl implements OtpError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(OtpLoading value)? otpLoading,
-    TResult? Function(OtpSuccess value)? otpSuccess,
-    TResult? Function(OtpError value)? otpError,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(OtpLoading<T> value)? otpLoading,
+    TResult? Function(OtpSuccess<T> value)? otpSuccess,
+    TResult? Function(OtpError<T> value)? otpError,
   }) {
     return otpError?.call(this);
   }
@@ -602,10 +603,10 @@ class _$OtpErrorImpl implements OtpError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(OtpLoading value)? otpLoading,
-    TResult Function(OtpSuccess value)? otpSuccess,
-    TResult Function(OtpError value)? otpError,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(OtpLoading<T> value)? otpLoading,
+    TResult Function(OtpSuccess<T> value)? otpSuccess,
+    TResult Function(OtpError<T> value)? otpError,
     required TResult orElse(),
   }) {
     if (otpError != null) {
@@ -615,14 +616,14 @@ class _$OtpErrorImpl implements OtpError {
   }
 }
 
-abstract class OtpError implements OtpState {
-  const factory OtpError(final ApiErrorModel apiErrorModel) = _$OtpErrorImpl;
+abstract class OtpError<T> implements OtpState<T> {
+  const factory OtpError(final ApiErrorModel apiErrorModel) = _$OtpErrorImpl<T>;
 
   ApiErrorModel get apiErrorModel;
 
   /// Create a copy of OtpState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$OtpErrorImplCopyWith<_$OtpErrorImpl> get copyWith =>
+  _$$OtpErrorImplCopyWith<T, _$OtpErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

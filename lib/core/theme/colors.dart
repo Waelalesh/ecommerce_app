@@ -16,6 +16,7 @@ class ColorsManager {
   static const Color lightGray = Color(0xFF707B81);
   static const Color lighterGray = Color(0xFFF8F9FA);
   static const Color doveGray = Color(0xFF616161);
+  static const Color darkSlateBlue = Color(0xFF2D3B48);
   /// Error colors
   static const Color errorDarkRed = Color(0xFFE53935); // Deep red
   static const Color errorLightRed = Color(0xFFEF5350); // Medium red

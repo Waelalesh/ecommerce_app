@@ -110,6 +110,18 @@ class TextStyles {
     fontWeight: FontWeightHelper.medium,
     fontFamily: FontFamily.airbnbCerialApp,
   );
+  static TextStyle font16WhiteMediumAirbnbCerialApp = TextStyle(
+    fontSize: 16.sp,
+    color: Colors.white,
+    fontWeight: FontWeightHelper.medium,
+    fontFamily: FontFamily.airbnbCerialApp,
+  );
+  static TextStyle font14WhiteMediumAirbnbCerialApp = TextStyle(
+    fontSize: 14.sp,
+    color: Colors.white,
+    fontWeight: FontWeightHelper.medium,
+    fontFamily: FontFamily.airbnbCerialApp,
+  );
 
   static TextStyle font12WhiteMediumAirbnbCerialApp = TextStyle(
     fontSize: 12.sp,

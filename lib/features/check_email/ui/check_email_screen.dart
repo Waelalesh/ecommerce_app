@@ -71,24 +71,8 @@ class CheckEmailScreen extends StatelessWidget {
                     verticalSpace(30),
                     AnimatedAppButton(
                         milliSecondsDuration: 1900,
-                        onPressed: () async {
-                          showDialog(
-                              context: context,
-                              builder: (builder) => Center(
-                                  child: Assets.lottieAnimation.loaidngColors
-                                      .lottie()));
-                          await Future.delayed(const Duration(seconds: 4));
-                          context.pop();
-                          showSuccessSnackbar(context,
-                              message: "Check E-mail Successful",
-                              title: "Success");
-                          Future.delayed(const Duration(seconds: 4))
-                              .then((onValue) {
-                            /// to check in the next screen if navigate to [login] screen or [change password] screen
-                            /// we passed the argument as a route name to check it
-                            context.pushNamed(Routes.otpScreen,
-                                arguments: Routes.checkEmailScreen);
-                          });
+                        onPressed: () {
+                          validateThenDoCheckEmail(context);
                         },
                         color: ColorsManager.eggplantPurple,
                         height: 48,

@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$CheckEmailState {
+mixin _$CheckEmailState<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -43,41 +43,41 @@ mixin _$CheckEmailState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(CheckEmailLoading value) checkEmailLoading,
-    required TResult Function(CheckEmailSuccess value) checkEmailSuccess,
-    required TResult Function(CheckEmailError value) checkEmailError,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(CheckEmailLoading<T> value) checkEmailLoading,
+    required TResult Function(CheckEmailSuccess<T> value) checkEmailSuccess,
+    required TResult Function(CheckEmailError<T> value) checkEmailError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(CheckEmailLoading value)? checkEmailLoading,
-    TResult? Function(CheckEmailSuccess value)? checkEmailSuccess,
-    TResult? Function(CheckEmailError value)? checkEmailError,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(CheckEmailLoading<T> value)? checkEmailLoading,
+    TResult? Function(CheckEmailSuccess<T> value)? checkEmailSuccess,
+    TResult? Function(CheckEmailError<T> value)? checkEmailError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(CheckEmailLoading value)? checkEmailLoading,
-    TResult Function(CheckEmailSuccess value)? checkEmailSuccess,
-    TResult Function(CheckEmailError value)? checkEmailError,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(CheckEmailLoading<T> value)? checkEmailLoading,
+    TResult Function(CheckEmailSuccess<T> value)? checkEmailSuccess,
+    TResult Function(CheckEmailError<T> value)? checkEmailError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CheckEmailStateCopyWith<$Res> {
+abstract class $CheckEmailStateCopyWith<T, $Res> {
   factory $CheckEmailStateCopyWith(
-          CheckEmailState value, $Res Function(CheckEmailState) then) =
-      _$CheckEmailStateCopyWithImpl<$Res, CheckEmailState>;
+          CheckEmailState<T> value, $Res Function(CheckEmailState<T>) then) =
+      _$CheckEmailStateCopyWithImpl<T, $Res, CheckEmailState<T>>;
 }
 
 /// @nodoc
-class _$CheckEmailStateCopyWithImpl<$Res, $Val extends CheckEmailState>
-    implements $CheckEmailStateCopyWith<$Res> {
+class _$CheckEmailStateCopyWithImpl<T, $Res, $Val extends CheckEmailState<T>>
+    implements $CheckEmailStateCopyWith<T, $Res> {
   _$CheckEmailStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -90,18 +90,18 @@ class _$CheckEmailStateCopyWithImpl<$Res, $Val extends CheckEmailState>
 }
 
 /// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
+abstract class _$$InitialImplCopyWith<T, $Res> {
   factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
+          _$InitialImpl<T> value, $Res Function(_$InitialImpl<T>) then) =
+      __$$InitialImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$CheckEmailStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
+class __$$InitialImplCopyWithImpl<T, $Res>
+    extends _$CheckEmailStateCopyWithImpl<T, $Res, _$InitialImpl<T>>
+    implements _$$InitialImplCopyWith<T, $Res> {
   __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      _$InitialImpl<T> _value, $Res Function(_$InitialImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of CheckEmailState
@@ -110,18 +110,18 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
+class _$InitialImpl<T> implements _Initial<T> {
   const _$InitialImpl();
 
   @override
   String toString() {
-    return 'CheckEmailState.initial()';
+    return 'CheckEmailState<$T>.initial()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType && other is _$InitialImpl<T>);
   }
 
   @override
@@ -167,10 +167,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(CheckEmailLoading value) checkEmailLoading,
-    required TResult Function(CheckEmailSuccess value) checkEmailSuccess,
-    required TResult Function(CheckEmailError value) checkEmailError,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(CheckEmailLoading<T> value) checkEmailLoading,
+    required TResult Function(CheckEmailSuccess<T> value) checkEmailSuccess,
+    required TResult Function(CheckEmailError<T> value) checkEmailError,
   }) {
     return initial(this);
   }
@@ -178,10 +178,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(CheckEmailLoading value)? checkEmailLoading,
-    TResult? Function(CheckEmailSuccess value)? checkEmailSuccess,
-    TResult? Function(CheckEmailError value)? checkEmailError,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(CheckEmailLoading<T> value)? checkEmailLoading,
+    TResult? Function(CheckEmailSuccess<T> value)? checkEmailSuccess,
+    TResult? Function(CheckEmailError<T> value)? checkEmailError,
   }) {
     return initial?.call(this);
   }
@@ -189,10 +189,10 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(CheckEmailLoading value)? checkEmailLoading,
-    TResult Function(CheckEmailSuccess value)? checkEmailSuccess,
-    TResult Function(CheckEmailError value)? checkEmailError,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(CheckEmailLoading<T> value)? checkEmailLoading,
+    TResult Function(CheckEmailSuccess<T> value)? checkEmailSuccess,
+    TResult Function(CheckEmailError<T> value)? checkEmailError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -202,23 +202,23 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements CheckEmailState {
-  const factory _Initial() = _$InitialImpl;
+abstract class _Initial<T> implements CheckEmailState<T> {
+  const factory _Initial() = _$InitialImpl<T>;
 }
 
 /// @nodoc
-abstract class _$$CheckEmailLoadingImplCopyWith<$Res> {
-  factory _$$CheckEmailLoadingImplCopyWith(_$CheckEmailLoadingImpl value,
-          $Res Function(_$CheckEmailLoadingImpl) then) =
-      __$$CheckEmailLoadingImplCopyWithImpl<$Res>;
+abstract class _$$CheckEmailLoadingImplCopyWith<T, $Res> {
+  factory _$$CheckEmailLoadingImplCopyWith(_$CheckEmailLoadingImpl<T> value,
+          $Res Function(_$CheckEmailLoadingImpl<T>) then) =
+      __$$CheckEmailLoadingImplCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$$CheckEmailLoadingImplCopyWithImpl<$Res>
-    extends _$CheckEmailStateCopyWithImpl<$Res, _$CheckEmailLoadingImpl>
-    implements _$$CheckEmailLoadingImplCopyWith<$Res> {
-  __$$CheckEmailLoadingImplCopyWithImpl(_$CheckEmailLoadingImpl _value,
-      $Res Function(_$CheckEmailLoadingImpl) _then)
+class __$$CheckEmailLoadingImplCopyWithImpl<T, $Res>
+    extends _$CheckEmailStateCopyWithImpl<T, $Res, _$CheckEmailLoadingImpl<T>>
+    implements _$$CheckEmailLoadingImplCopyWith<T, $Res> {
+  __$$CheckEmailLoadingImplCopyWithImpl(_$CheckEmailLoadingImpl<T> _value,
+      $Res Function(_$CheckEmailLoadingImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of CheckEmailState
@@ -227,18 +227,19 @@ class __$$CheckEmailLoadingImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CheckEmailLoadingImpl implements CheckEmailLoading {
+class _$CheckEmailLoadingImpl<T> implements CheckEmailLoading<T> {
   const _$CheckEmailLoadingImpl();
 
   @override
   String toString() {
-    return 'CheckEmailState.checkEmailLoading()';
+    return 'CheckEmailState<$T>.checkEmailLoading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CheckEmailLoadingImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$CheckEmailLoadingImpl<T>);
   }
 
   @override
@@ -284,10 +285,10 @@ class _$CheckEmailLoadingImpl implements CheckEmailLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(CheckEmailLoading value) checkEmailLoading,
-    required TResult Function(CheckEmailSuccess value) checkEmailSuccess,
-    required TResult Function(CheckEmailError value) checkEmailError,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(CheckEmailLoading<T> value) checkEmailLoading,
+    required TResult Function(CheckEmailSuccess<T> value) checkEmailSuccess,
+    required TResult Function(CheckEmailError<T> value) checkEmailError,
   }) {
     return checkEmailLoading(this);
   }
@@ -295,10 +296,10 @@ class _$CheckEmailLoadingImpl implements CheckEmailLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(CheckEmailLoading value)? checkEmailLoading,
-    TResult? Function(CheckEmailSuccess value)? checkEmailSuccess,
-    TResult? Function(CheckEmailError value)? checkEmailError,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(CheckEmailLoading<T> value)? checkEmailLoading,
+    TResult? Function(CheckEmailSuccess<T> value)? checkEmailSuccess,
+    TResult? Function(CheckEmailError<T> value)? checkEmailError,
   }) {
     return checkEmailLoading?.call(this);
   }
@@ -306,10 +307,10 @@ class _$CheckEmailLoadingImpl implements CheckEmailLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(CheckEmailLoading value)? checkEmailLoading,
-    TResult Function(CheckEmailSuccess value)? checkEmailSuccess,
-    TResult Function(CheckEmailError value)? checkEmailError,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(CheckEmailLoading<T> value)? checkEmailLoading,
+    TResult Function(CheckEmailSuccess<T> value)? checkEmailSuccess,
+    TResult Function(CheckEmailError<T> value)? checkEmailError,
     required TResult orElse(),
   }) {
     if (checkEmailLoading != null) {
@@ -319,25 +320,25 @@ class _$CheckEmailLoadingImpl implements CheckEmailLoading {
   }
 }
 
-abstract class CheckEmailLoading implements CheckEmailState {
-  const factory CheckEmailLoading() = _$CheckEmailLoadingImpl;
+abstract class CheckEmailLoading<T> implements CheckEmailState<T> {
+  const factory CheckEmailLoading() = _$CheckEmailLoadingImpl<T>;
 }
 
 /// @nodoc
-abstract class _$$CheckEmailSuccessImplCopyWith<$Res> {
-  factory _$$CheckEmailSuccessImplCopyWith(_$CheckEmailSuccessImpl value,
-          $Res Function(_$CheckEmailSuccessImpl) then) =
-      __$$CheckEmailSuccessImplCopyWithImpl<$Res>;
+abstract class _$$CheckEmailSuccessImplCopyWith<T, $Res> {
+  factory _$$CheckEmailSuccessImplCopyWith(_$CheckEmailSuccessImpl<T> value,
+          $Res Function(_$CheckEmailSuccessImpl<T>) then) =
+      __$$CheckEmailSuccessImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({CheckEmailResponse data});
 }
 
 /// @nodoc
-class __$$CheckEmailSuccessImplCopyWithImpl<$Res>
-    extends _$CheckEmailStateCopyWithImpl<$Res, _$CheckEmailSuccessImpl>
-    implements _$$CheckEmailSuccessImplCopyWith<$Res> {
-  __$$CheckEmailSuccessImplCopyWithImpl(_$CheckEmailSuccessImpl _value,
-      $Res Function(_$CheckEmailSuccessImpl) _then)
+class __$$CheckEmailSuccessImplCopyWithImpl<T, $Res>
+    extends _$CheckEmailStateCopyWithImpl<T, $Res, _$CheckEmailSuccessImpl<T>>
+    implements _$$CheckEmailSuccessImplCopyWith<T, $Res> {
+  __$$CheckEmailSuccessImplCopyWithImpl(_$CheckEmailSuccessImpl<T> _value,
+      $Res Function(_$CheckEmailSuccessImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of CheckEmailState
@@ -347,7 +348,7 @@ class __$$CheckEmailSuccessImplCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
   }) {
-    return _then(_$CheckEmailSuccessImpl(
+    return _then(_$CheckEmailSuccessImpl<T>(
       null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
@@ -358,7 +359,7 @@ class __$$CheckEmailSuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CheckEmailSuccessImpl implements CheckEmailSuccess {
+class _$CheckEmailSuccessImpl<T> implements CheckEmailSuccess<T> {
   const _$CheckEmailSuccessImpl(this.data);
 
   @override
@@ -366,14 +367,14 @@ class _$CheckEmailSuccessImpl implements CheckEmailSuccess {
 
   @override
   String toString() {
-    return 'CheckEmailState.checkEmailSuccess(data: $data)';
+    return 'CheckEmailState<$T>.checkEmailSuccess(data: $data)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CheckEmailSuccessImpl &&
+            other is _$CheckEmailSuccessImpl<T> &&
             (identical(other.data, data) || other.data == data));
   }
 
@@ -385,9 +386,10 @@ class _$CheckEmailSuccessImpl implements CheckEmailSuccess {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$CheckEmailSuccessImplCopyWith<_$CheckEmailSuccessImpl> get copyWith =>
-      __$$CheckEmailSuccessImplCopyWithImpl<_$CheckEmailSuccessImpl>(
-          this, _$identity);
+  _$$CheckEmailSuccessImplCopyWith<T, _$CheckEmailSuccessImpl<T>>
+      get copyWith =>
+          __$$CheckEmailSuccessImplCopyWithImpl<T, _$CheckEmailSuccessImpl<T>>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -429,10 +431,10 @@ class _$CheckEmailSuccessImpl implements CheckEmailSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(CheckEmailLoading value) checkEmailLoading,
-    required TResult Function(CheckEmailSuccess value) checkEmailSuccess,
-    required TResult Function(CheckEmailError value) checkEmailError,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(CheckEmailLoading<T> value) checkEmailLoading,
+    required TResult Function(CheckEmailSuccess<T> value) checkEmailSuccess,
+    required TResult Function(CheckEmailError<T> value) checkEmailError,
   }) {
     return checkEmailSuccess(this);
   }
@@ -440,10 +442,10 @@ class _$CheckEmailSuccessImpl implements CheckEmailSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(CheckEmailLoading value)? checkEmailLoading,
-    TResult? Function(CheckEmailSuccess value)? checkEmailSuccess,
-    TResult? Function(CheckEmailError value)? checkEmailError,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(CheckEmailLoading<T> value)? checkEmailLoading,
+    TResult? Function(CheckEmailSuccess<T> value)? checkEmailSuccess,
+    TResult? Function(CheckEmailError<T> value)? checkEmailError,
   }) {
     return checkEmailSuccess?.call(this);
   }
@@ -451,10 +453,10 @@ class _$CheckEmailSuccessImpl implements CheckEmailSuccess {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(CheckEmailLoading value)? checkEmailLoading,
-    TResult Function(CheckEmailSuccess value)? checkEmailSuccess,
-    TResult Function(CheckEmailError value)? checkEmailError,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(CheckEmailLoading<T> value)? checkEmailLoading,
+    TResult Function(CheckEmailSuccess<T> value)? checkEmailSuccess,
+    TResult Function(CheckEmailError<T> value)? checkEmailError,
     required TResult orElse(),
   }) {
     if (checkEmailSuccess != null) {
@@ -464,34 +466,34 @@ class _$CheckEmailSuccessImpl implements CheckEmailSuccess {
   }
 }
 
-abstract class CheckEmailSuccess implements CheckEmailState {
+abstract class CheckEmailSuccess<T> implements CheckEmailState<T> {
   const factory CheckEmailSuccess(final CheckEmailResponse data) =
-      _$CheckEmailSuccessImpl;
+      _$CheckEmailSuccessImpl<T>;
 
   CheckEmailResponse get data;
 
   /// Create a copy of CheckEmailState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CheckEmailSuccessImplCopyWith<_$CheckEmailSuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CheckEmailSuccessImplCopyWith<T, _$CheckEmailSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$CheckEmailErrorImplCopyWith<$Res> {
-  factory _$$CheckEmailErrorImplCopyWith(_$CheckEmailErrorImpl value,
-          $Res Function(_$CheckEmailErrorImpl) then) =
-      __$$CheckEmailErrorImplCopyWithImpl<$Res>;
+abstract class _$$CheckEmailErrorImplCopyWith<T, $Res> {
+  factory _$$CheckEmailErrorImplCopyWith(_$CheckEmailErrorImpl<T> value,
+          $Res Function(_$CheckEmailErrorImpl<T>) then) =
+      __$$CheckEmailErrorImplCopyWithImpl<T, $Res>;
   @useResult
   $Res call({ApiErrorModel apiErrorModel});
 }
 
 /// @nodoc
-class __$$CheckEmailErrorImplCopyWithImpl<$Res>
-    extends _$CheckEmailStateCopyWithImpl<$Res, _$CheckEmailErrorImpl>
-    implements _$$CheckEmailErrorImplCopyWith<$Res> {
-  __$$CheckEmailErrorImplCopyWithImpl(
-      _$CheckEmailErrorImpl _value, $Res Function(_$CheckEmailErrorImpl) _then)
+class __$$CheckEmailErrorImplCopyWithImpl<T, $Res>
+    extends _$CheckEmailStateCopyWithImpl<T, $Res, _$CheckEmailErrorImpl<T>>
+    implements _$$CheckEmailErrorImplCopyWith<T, $Res> {
+  __$$CheckEmailErrorImplCopyWithImpl(_$CheckEmailErrorImpl<T> _value,
+      $Res Function(_$CheckEmailErrorImpl<T>) _then)
       : super(_value, _then);
 
   /// Create a copy of CheckEmailState
@@ -501,7 +503,7 @@ class __$$CheckEmailErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? apiErrorModel = null,
   }) {
-    return _then(_$CheckEmailErrorImpl(
+    return _then(_$CheckEmailErrorImpl<T>(
       null == apiErrorModel
           ? _value.apiErrorModel
           : apiErrorModel // ignore: cast_nullable_to_non_nullable
@@ -512,7 +514,7 @@ class __$$CheckEmailErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CheckEmailErrorImpl implements CheckEmailError {
+class _$CheckEmailErrorImpl<T> implements CheckEmailError<T> {
   const _$CheckEmailErrorImpl(this.apiErrorModel);
 
   @override
@@ -520,14 +522,14 @@ class _$CheckEmailErrorImpl implements CheckEmailError {
 
   @override
   String toString() {
-    return 'CheckEmailState.checkEmailError(apiErrorModel: $apiErrorModel)';
+    return 'CheckEmailState<$T>.checkEmailError(apiErrorModel: $apiErrorModel)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CheckEmailErrorImpl &&
+            other is _$CheckEmailErrorImpl<T> &&
             (identical(other.apiErrorModel, apiErrorModel) ||
                 other.apiErrorModel == apiErrorModel));
   }
@@ -540,8 +542,8 @@ class _$CheckEmailErrorImpl implements CheckEmailError {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$CheckEmailErrorImplCopyWith<_$CheckEmailErrorImpl> get copyWith =>
-      __$$CheckEmailErrorImplCopyWithImpl<_$CheckEmailErrorImpl>(
+  _$$CheckEmailErrorImplCopyWith<T, _$CheckEmailErrorImpl<T>> get copyWith =>
+      __$$CheckEmailErrorImplCopyWithImpl<T, _$CheckEmailErrorImpl<T>>(
           this, _$identity);
 
   @override
@@ -584,10 +586,10 @@ class _$CheckEmailErrorImpl implements CheckEmailError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(CheckEmailLoading value) checkEmailLoading,
-    required TResult Function(CheckEmailSuccess value) checkEmailSuccess,
-    required TResult Function(CheckEmailError value) checkEmailError,
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(CheckEmailLoading<T> value) checkEmailLoading,
+    required TResult Function(CheckEmailSuccess<T> value) checkEmailSuccess,
+    required TResult Function(CheckEmailError<T> value) checkEmailError,
   }) {
     return checkEmailError(this);
   }
@@ -595,10 +597,10 @@ class _$CheckEmailErrorImpl implements CheckEmailError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(CheckEmailLoading value)? checkEmailLoading,
-    TResult? Function(CheckEmailSuccess value)? checkEmailSuccess,
-    TResult? Function(CheckEmailError value)? checkEmailError,
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(CheckEmailLoading<T> value)? checkEmailLoading,
+    TResult? Function(CheckEmailSuccess<T> value)? checkEmailSuccess,
+    TResult? Function(CheckEmailError<T> value)? checkEmailError,
   }) {
     return checkEmailError?.call(this);
   }
@@ -606,10 +608,10 @@ class _$CheckEmailErrorImpl implements CheckEmailError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(CheckEmailLoading value)? checkEmailLoading,
-    TResult Function(CheckEmailSuccess value)? checkEmailSuccess,
-    TResult Function(CheckEmailError value)? checkEmailError,
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(CheckEmailLoading<T> value)? checkEmailLoading,
+    TResult Function(CheckEmailSuccess<T> value)? checkEmailSuccess,
+    TResult Function(CheckEmailError<T> value)? checkEmailError,
     required TResult orElse(),
   }) {
     if (checkEmailError != null) {
@@ -619,15 +621,15 @@ class _$CheckEmailErrorImpl implements CheckEmailError {
   }
 }
 
-abstract class CheckEmailError implements CheckEmailState {
+abstract class CheckEmailError<T> implements CheckEmailState<T> {
   const factory CheckEmailError(final ApiErrorModel apiErrorModel) =
-      _$CheckEmailErrorImpl;
+      _$CheckEmailErrorImpl<T>;
 
   ApiErrorModel get apiErrorModel;
 
   /// Create a copy of CheckEmailState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$CheckEmailErrorImplCopyWith<_$CheckEmailErrorImpl> get copyWith =>
+  _$$CheckEmailErrorImplCopyWith<T, _$CheckEmailErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

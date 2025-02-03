@@ -1,5 +1,8 @@
 // ignore_for_file: use_build_context_synchronously, avoid_print
 
+import 'package:ecommerce_app/features/otp/data/models/argument_otp_model.dart';
+import 'package:ecommerce_app/features/otp/data/models/otp_request_body.dart';
+import 'package:ecommerce_app/features/otp/logic/otp_cubit.dart';
 import 'package:ecommerce_app/features/otp/ui/widgets/otp_bloc_listner.dart';
 
 import '../../../imports.dart';
@@ -39,35 +42,10 @@ class OtpScreen extends StatelessWidget {
                       duration: const Duration(milliseconds: 1900),
                       child: OtpTextField(
                         keyboardType: TextInputType.number,
-                        onSubmit: (value) async {
-                          showDialog(
-                              context: context,
-                              builder: (builder) => Container(
-                                  clipBehavior: Clip.hardEdge,
-                                  decoration: const BoxDecoration(
-                                      shape: BoxShape.circle),
-                                  margin:
-                                      EdgeInsets.symmetric(horizontal: 60.w),
-                                  child: Assets.lottieAnimation.loadingRocket
-                                      .lottie()));
-                          await Future.delayed(const Duration(seconds: 8));
-                          context.pop();
-                          showSuccessSnackbar(context,
-                              message: "Verification Successful",
-                              title: "Success");
-                          Future.delayed(const Duration(seconds: 4))
-                              .then((onValue) {
-                            /// Here we Check if the argument we passed in prvious screen is a [sign up] route to navigate to [login screen] to login
-                            /// if not we navigate to [reset password screen]
-                            if (ModalRoute.of(context)!.settings.arguments ==
-                                Routes.signUpScreen) {
-                              context.pushNamedAndRemoveUntil(
-                                  Routes.logInScreen,
-                                  predicate: (predicate) => false);
-                            } else {
-                              context.pushNamed(Routes.resetPasswordScreen);
-                            }
-                          });
+                        onSubmit: (value) {
+                          /// Here we Check if the argument we passed in prvious screen is a [sign up] route to navigate to [login screen] to login
+                          /// if not we navigate to [reset password screen]
+                          validateThenVerifyCode(context, value);
                         },
                         // fieldHeight: 100.h,
                         borderColor: ColorsManager.normalPurple,
@@ -86,5 +64,24 @@ class OtpScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void validateThenVerifyCode(BuildContext context, String otpNumber) {
+    ArgumentOtpModel argumentOtpModel =
+        ModalRoute.of(context)!.settings.arguments as ArgumentOtpModel;
+    if (argumentOtpModel.routeName == Routes.signUpScreen) {
+      context
+          .read<OtpCubit>()
+          .emitVerifiCodeForRegisterStates(OtpRequestBodyForSignUp(
+            email: argumentOtpModel.data!.email,
+            name: argumentOtpModel.data!.name,
+            otp: otpNumber,
+            password: argumentOtpModel.data!.password,
+            phoneNumber: argumentOtpModel.data!.phoneNumber,
+          ));
+    } else {
+      context.read<OtpCubit>().emitVerifiCodeForResetPasswordStates(
+          email: argumentOtpModel.data, otp: otpNumber);
+    }
   }
 }

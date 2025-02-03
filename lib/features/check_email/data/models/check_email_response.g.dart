@@ -10,10 +10,12 @@ CheckEmailResponse _$CheckEmailResponseFromJson(Map<String, dynamic> json) =>
     CheckEmailResponse(
       message: json['message'] as String?,
       status: json['status'] as bool?,
+      email: json['email'] as String?,
     );
 
 Map<String, dynamic> _$CheckEmailResponseToJson(CheckEmailResponse instance) =>
     <String, dynamic>{
       'message': instance.message,
       'status': instance.status,
+      'email': instance.email,
     };
